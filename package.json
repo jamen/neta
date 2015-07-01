@@ -1,0 +1,28 @@
+{
+  "name": "cluster",
+  "version": "0.0.0",
+  "description": "A barebones TCP chatting client",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "node test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JamenMarz/cluster"
+  },
+  "keywords": [
+    "chat",
+    "tcp",
+    "client",
+    "cluster"
+  ],
+  "author": "Jamen Marz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JamenMarz/cluster/issues"
+  },
+  "homepage": "https://github.com/JamenMarz/cluster"
+}
