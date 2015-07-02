@@ -1,4 +1,4 @@
-module.exports = exports =
+module.exports =
 (function(stdin, stdout, argv){
   "use strict";
   var lib = require("./lib"),
