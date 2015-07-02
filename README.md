@@ -1,2 +1,2 @@
 # Cluster
-A Cluster client, used for connecting to Cluster servers via terminal.
+A client that connects to a Cluster server.  Designed on events emitted from I/O on the mini-protocol CLSP.
