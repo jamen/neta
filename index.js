@@ -7,11 +7,12 @@ module.exports = exports =
     var self = this;
     this.params = params || {};
     this.lib = lib;
-    this.interface = new lib.Interface(stdin, stdout, argv, lib);
 
+    /* Old tests that used a version of Interface I forgot to commit:
+    this.interface = new lib.Interface(stdin, stdout, argv, lib);
     this.interface.input(function(data){
       self.interface.output(data);
-    });
+    });*/
 
     if (typeof this.params !== "undefined") console.log(this.params);
   };
