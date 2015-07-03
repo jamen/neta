@@ -2,7 +2,7 @@
   "name": "cluster",
   "version": "0.0.0",
   "description": "A barebones TCP chatting client",
-  "main": "index.js",
+  "main": "index.coffee",
   "directories": {
     "test": "test"
   },
