@@ -5,11 +5,11 @@ module.exports =
 
   {Client, Interface} = lib
   {stdin, stdout, argv} = process
-  argv = argv.slice 1, process.argv.lenth
+  argv = argv.slice 2, process.argv.lenth
 
   Cluster = (params = {}) ->
     @params = params
-    console.log "ayy"
+    console.log @params
 
   if stdin.isTTY
     cluster = new Cluster(
