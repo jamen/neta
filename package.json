@@ -3,11 +3,8 @@
   "version": "0.0.0",
   "description": "A barebones TCP chatting client",
   "main": "index.coffee",
-  "directories": {
-    "test": "test"
-  },
   "scripts": {
-    "test": "coffee test"
+    "test": "./cluster"
   },
   "repository": {
     "type": "git",
