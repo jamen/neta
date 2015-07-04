@@ -2,4 +2,7 @@
 .DS_Store
 ._*
 *.log
+
+# src
 src/*
+!src/README.md
