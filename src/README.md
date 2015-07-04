@@ -2,7 +2,7 @@
 
 To compile the CoffeeScript into JavaScript, you can simply:
 
- 1. Use the `build` file, which is equivalent to option 2. (Bash only)
+ 1. Use the `build` file, which is equivalent to option 2. (Shell only)
   1. `./build` for library users.
   2. `./build dev` for contributors.
  2. Use the CoffeeScript compiler:
