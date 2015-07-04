@@ -8,14 +8,18 @@ module.exports =
   argv = argv.slice 2, process.argv.lenth
 
   Cluster = (params = {}) ->
-    @params = params
-    console.log @params
+    {host, port} = params
+    return (
+      host: host,
+      port: port
+    )
 
   if stdin.isTTY
-    cluster = new Cluster(
+    cluster = Cluster(
       host: argv[0],
       port: argv[1]
     )
+    console.log cluster
 
   return Cluster
 )()
