@@ -1,8 +1,0 @@
-#!/usr/bin/env sh
-if [ "$1" = "dev" ]; then
-  echo "=== Auto-compiling Initiated ===" >&1 | tee -a src/output.log
-  coffee -o "src" -wbc "." >&1 | tee -a src/output.log
-else
-  coffee -o "src" -bc "."
-  exit 0
-fi

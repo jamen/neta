@@ -1,5 +1,5 @@
 # Cluster
-A client built on [CoffeeScript](http://coffeescript.org/) that connects to a Cluster server.  Designed on events emitted from I/O on the mini-protocol CLSP.
+A client that connects to a Cluster server.  Designed on events emitted from I/O on the mini-protocol CLSP.
 
 It's important to note this is dependent on CoffeeScript, although you don't have to run it in CoffeeScript, you can compile it down to JavaScript (using `build`) so you can use it in your JavaScript-based libraries.
 

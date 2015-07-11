@@ -2,7 +2,7 @@
   "name": "cluster",
   "version": "0.0.0",
   "description": "A barebones TCP chatting client",
-  "main": "index.coffee",
+  "main": "index.js",
   "scripts": {
     "test": "./cluster"
   },
@@ -20,9 +20,6 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/JamenMarz/cluster/issues"
-  },
-  "dependencies":{
-    "coffee-script": ">=1.9.0"
   },
   "homepage": "https://github.com/JamenMarz/cluster"
 }
