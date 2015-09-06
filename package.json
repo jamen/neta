@@ -1,10 +1,10 @@
 {
   "name": "cluster",
   "version": "0.0.0",
-  "description": "A barebones TCP chatting client",
-  "main": "index.js",
-  "scripts": {
-    "test": "./cluster"
+  "description": "A simple terminal-based chatting client.",
+  "main": "index.coffee",
+  "bin": {
+    "cluster": "coffee index.coffee"
   },
   "repository": {
     "type": "git",
@@ -12,10 +12,12 @@
   },
   "keywords": [
     "chat",
-    "tcp",
     "client",
-    "cluster"
+    "terminal"
   ],
+  "dependencies": {
+    "coffeescript": "^1.10.0"
+  },
   "author": "Jamen Marz",
   "license": "MIT",
   "bugs": {
