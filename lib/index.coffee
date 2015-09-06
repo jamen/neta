@@ -1,3 +1,3 @@
 module.exports =
-  'Interface': require './frame'
+  'Frame': require './frame'
   'Client': require './client'
