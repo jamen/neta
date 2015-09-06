@@ -4,7 +4,7 @@
   "description": "A simple terminal-based chatting client.",
   "main": "index.coffee",
   "bin": {
-    "cluster": "coffee index.coffee"
+    "cluster": "index.coffee"
   },
   "repository": {
     "type": "git",
