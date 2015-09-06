@@ -16,7 +16,7 @@
     "terminal"
   ],
   "dependencies": {
-    "coffeescript": "^1.10.0"
+    "coffee-script": "^1.10.0"
   },
   "author": "Jamen Marz",
   "license": "MIT",
