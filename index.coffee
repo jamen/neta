@@ -1,20 +1,20 @@
 #!/usr/bin/env coffee
 
-{Frame, Client} = require './lib'
+{Frame, Client, Server, codes} = require './lib'
 {stdin, stdout} = process
 
 frame = new Frame process
 stdin.resume();
 
 frame
-  .save()
-  .set '[0m'
+  .save 'screen'
+  .format 'none'
   .erase()
-  .set '['+stdout.rows+';0f'
-  .background '[40m'
-  .set '[47;30m'
+  .pos stdout.rows, 0
+  .background 'black'
+  .color 'black', 'white'
   .fillLine()
-  .set '['+(stdout.rows+1)+'H'
+  .pos stdout.rows+1, 0
   .write '> '
 
 typed = 0
@@ -34,5 +34,7 @@ frame.on 'input', (data, rawdata) ->
 
 frame.on 'exit', (data) ->
   frame
-  .restore()
+    .format 'none'
+    .color 'none', 'none'
+    .restore('screen')
   process.exit()

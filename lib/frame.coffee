@@ -1,4 +1,5 @@
 tty = require 'tty'
+fs = require 'fs'
 
 module.exports =
 class Frame
@@ -63,25 +64,27 @@ class Frame
     return @
 
   color: (fore, back) ->
-    @set '['+ @codes.color[fore].fore +';'+ @core.color[back].back +'m'
+    @set '[' + @codes.colors[fore].fore + ';' + @codes.colors[back].back + 'm'
     return @
 
   format: (code) ->
-    @set '['+ (@codes.format[code]) +'m'
+    code = @codes.format[code]
+    @set('[' + code + 'm')
     return @
 
   erase: ->
+    @set '[2J'
     return @
 
   save: (which) ->
-    if which is 'cur' or 'cursor'
+    if which is 'cur' or which is 'cursor'
       @set '[s'
     else if which is 'screen'
       @set '[?47h'
     return @
 
   restore: (which) ->
-    if which is 'cur' or 'cursor'
+    if which is 'cur' or which is 'cursor'
       @set '[u'
     else if which is 'screen'
       @set '[?47l'
@@ -91,31 +94,43 @@ class Frame
   # Cursor actions
   up: (num) ->
     if typeof num is 'number'
-      @set '['+num+'A'
+      @set '[' +num+ 'A'
     return @
 
   down: (num) ->
     if typeof num is 'number'
-      @set '['+num+'B'
+      @set '[' +num+ 'B'
     return @
 
   right: (num) ->
     if typeof num is 'number'
-      @set '['+num+'C'
+      @set '[' +num+ 'C'
     return @
 
   left: (num) ->
     if typeof num is 'number'
-      @set '['+num+'D'
+      @set '[' +num+ 'D'
     return @
 
   pos: (x, y) ->
     if typeof x is 'number' and typeof y is 'number'
-      @set '['+ x +';'+ y +'H'
+      @set '[' + x + ';' + y + 'H'
     return @
 
+  fillLine: ->
+    @write @aLine
+    return @
 
-  background: (color) ->
+  background: (back) ->
+    @save 'cur'
+    i = 0
+    while @stdout.rows >= i
+      @pos i, 0
+      @fillLine()
+      @color 'none', back
+      i++;
+    @restore 'cur'
+    @color 'none', 'none'
     return @
 
   # ~~~
