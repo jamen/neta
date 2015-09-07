@@ -30,5 +30,7 @@ class Client
       @event[name] = func
 
   trigger: (name, data) ->
-    if arguments.length is 2 and typeof name is 'string' and data instanceof Array and typeof @event[name] isnt 'undefined'
-      @event[name].apply this, data
+    if arguments.length is 2
+      if typeof name is 'string'
+        if data instanceof Array and typeof @event[name] isnt 'undefined'
+          @event[name].apply this, data
