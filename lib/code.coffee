@@ -8,6 +8,9 @@ module.exports =
     concealed: 8
 
   colors:
+    none:
+      fore: 0
+      back: 0
     black:
       fore: 30
       back: 40
@@ -32,5 +35,3 @@ module.exports =
     white:
       fore: 37
       back: 47
-
-    
