@@ -1,5 +1,6 @@
 module.exports =
   format:
+    none: 0
     off: 0
     bold: 1
     underline: 4
