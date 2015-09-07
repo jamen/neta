@@ -1,20 +1,18 @@
 tty = require 'tty'
-resources = require './resources'
+code = require './resources'
 
 module.exports =
 class Frame
   process: null
   stdin: null
   stdout: null
-  argv: []
   event: {}
-  options: {}
   aLine: null
 
   constructor: (process) ->
     @process = process
     {@stdin, @stdout, @argv} = process
-    @argv = @argv.slice 2
+    #@argv = @argv.slice 2
     @aLine = new Array(@stdout.columns+1).join(' ')
 
     @stdin.setRawMode true
@@ -64,6 +62,7 @@ class Frame
     return this
 
 
+
   save: ->
     @set '[?47h'
     return this
@@ -72,11 +71,8 @@ class Frame
     @set '[?47l'
     return this
 
-  define: (option, data) ->
-    if typeof option is 'string' and typeof data isnt 'undefined'
-      @options[option] = data
-    return this
-
+  # ~~~
+  # Custom eventing
   on: (name, func) ->
     if typeof name is 'string' and typeof func is 'function'
       @event[name] = func
