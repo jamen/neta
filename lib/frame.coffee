@@ -7,6 +7,7 @@ class Frame
   stdout: null
   argv: []
   event: {}
+  options: {}
 
   constructor: (process) ->
     @process = process
@@ -23,16 +24,6 @@ class Frame
 
     return
 
-  on: (name, func) ->
-    if typeof name is 'string' and typeof func is 'function'
-      @event[name] = func
-
-  trigger: (name, data) ->
-    if arguments.length is 2
-      if typeof name is 'string'
-        if data instanceof Array and typeof @event[name] isnt 'undefined'
-          @event[name].apply this, data
-
   encode: (input) ->
     bytes = (x) ->
       if typeof x is 'string'
@@ -46,4 +37,34 @@ class Frame
 
         return output
 
-    return new Buffer([0xb1].concat bytes(input))
+    return new Buffer([0x1b].concat bytes(input))
+
+  write: (input) ->
+    if arguments.length <= 1
+      @stdin.write input
+    else
+      inputs = Array.prototype.slice.call arguments
+      inputs.forEach (input) ->
+        @stdin.write input
+
+  put: (code) ->
+    input = @encode(code)
+    if arguments.length <= 1
+      @stdin.write input
+    else
+      @write @encode(Array.prototype.slice.call(arguments))
+
+  set: (option, data) ->
+    if typeof option is 'string' and typeof data isnt 'undefined'
+      @options[option] = data
+
+  on: (name, func) ->
+    if typeof name is 'string' and typeof func is 'function'
+      @event[name] = func
+
+
+  trigger: (name, data) ->
+    if arguments.length is 2
+      if typeof name is 'string'
+        if data instanceof Array and typeof @event[name] isnt 'undefined'
+          @event[name].apply this, data
