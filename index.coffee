@@ -25,6 +25,7 @@ frame.on 'input', (data, rawdata) ->
       alter = share.typed.split('')
       alter[alter.length - share.right] = data
       share.typed = alter.join('')
+      share.right--
 
 
 frame.on 'resize', ->
