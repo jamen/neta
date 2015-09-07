@@ -1,4 +1,5 @@
 tty = require 'tty'
+resources = require './resources'
 
 module.exports =
 class Frame
@@ -52,7 +53,6 @@ class Frame
       inputs = Array.prototype.slice.call arguments
       inputs.forEach (input) ->
         @stdin.write input
-
     return this
 
   set: (code) ->
@@ -61,20 +61,8 @@ class Frame
       @stdin.write input
     else
       @write @encode(Array.prototype.slice.call(arguments))
-
     return this
 
-  define: (option, data) ->
-    if typeof option is 'string' and typeof data isnt 'undefined'
-      @options[option] = data
-
-    return this
-
-  on: (name, func) ->
-    if typeof name is 'string' and typeof func is 'function'
-      @event[name] = func
-
-    return this
 
   save: ->
     @set '[?47h'
@@ -84,29 +72,19 @@ class Frame
     @set '[?47l'
     return this
 
-  erase: ->
-    @set '[2J'
+  define: (option, data) ->
+    if typeof option is 'string' and typeof data isnt 'undefined'
+      @options[option] = data
     return this
 
-  fillLine: (prefix) ->
-    @write (if prefix? then prefix else '') + @aLine
+  on: (name, func) ->
+    if typeof name is 'string' and typeof func is 'function'
+      @event[name] = func
     return this
-
-  background: (code) ->
-    i = 0
-    @set '[s'
-    while i <= @stdout.rows
-      @set '['+i+';0f'
-      @set code
-      @write @aLine + '\n'
-      i++
-    @set '[u'
-
 
   trigger: (name, data) ->
     if arguments.length is 2
       if typeof name is 'string'
         if data instanceof Array and typeof @event[name] isnt 'undefined'
           @event[name].apply this, data
-
     return this
