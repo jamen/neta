@@ -6,18 +6,10 @@
 frame = new Frame process
 stdin.resume();
 
-frame
-  .save 'screen'
-  .format 'none'
-  .erase()
-  .pos stdout.rows, 0
-  .background 'black'
-  .color 'black', 'white'
-  .fillLine()
-  .pos stdout.rows+1, 0
-  .write '> '
+frame.build()
 
-typed = 0
+typed = ''
+previous = ''
 frame.on 'input', (data, rawdata) ->
   if rawdata[0] is 127
     if typed isnt 0
@@ -25,12 +17,22 @@ frame.on 'input', (data, rawdata) ->
         .set '[1D'
         .write ' '
         .set '[1D'
-        typed--
+        typed = typed.slice(0, -1)
   else if rawdata[0] is 13
-
+    frame.prompt()
+    previous = typed
+    typed = ''
+  else if rawdata[0] is 27
+    if rawdata[1] is 91 and rawdata[2] is 65
+      frame.write previous
+      typed = previous
+    else if rawdata[2] is 66
+    else
+      frame.write data
+      typed++
   else
     frame.write data
-    typed++
+    typed += data
 
 frame.on 'exit', (data) ->
   frame
