@@ -133,6 +133,20 @@ class Frame
     @color 'none', 'none'
     return @
 
+  prompt: ->
+    @pos @stdout.rows, 0
+    @color 'black', 'white'
+    @fillLine()
+    @pos @stdout.rows+1, 0
+    @write '> '
+
+  build: ->
+    @save 'screen'
+    @format 'none'
+    @erase()
+    @background 'black'
+    @prompt()
+
   # ~~~
   # Custom eventing
   on: (name, func) ->
