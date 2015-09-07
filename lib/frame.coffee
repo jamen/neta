@@ -15,7 +15,7 @@ class Frame
     {@stdin, @stdout, @argv} = process
     #@argv = @argv.slice 2
     @aLine = new Array(@stdout.columns+1).join(' ')
-    @codes = require './codes'
+    {@codes, @handlers} = require './'
 
     @stdin.setRawMode true
 
@@ -139,6 +139,7 @@ class Frame
     @fillLine()
     @pos @stdout.rows+1, 0
     @write '> '
+    return @
 
   build: ->
     @save 'screen'
@@ -146,6 +147,10 @@ class Frame
     @erase()
     @background 'black'
     @prompt()
+    return @
+
+  handle: (name, data) ->
+    return @handlers[name]?.apply @, data
 
   # ~~~
   # Custom eventing

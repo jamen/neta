@@ -8,31 +8,27 @@ stdin.resume();
 
 frame.build()
 
-typed = ''
-previous = ''
+share = {typed:'', right:0}
 frame.on 'input', (data, rawdata) ->
-  if rawdata[0] is 127
-    if typed isnt 0
-      frame
-        .set '[1D'
-        .write ' '
-        .set '[1D'
-        typed = typed.slice(0, -1)
-  else if rawdata[0] is 13
+  isFunction = frame.handle 'input functions', [data, rawdata, frame, share]
+
+  if rawdata[0] is 13
+    console.log '\n' + share.typed
+    share.typed = ''
     frame.prompt()
-    previous = typed
-    typed = ''
-  else if rawdata[0] is 27
-    if rawdata[1] is 91 and rawdata[2] is 65
-      frame.write previous
-      typed = previous
-    else if rawdata[2] is 66
-    else
-      frame.write data
-      typed++
-  else
+
+  else if isFunction isnt true
     frame.write data
-    typed += data
+    if !share.right
+      share.typed += data
+    else
+      alter = share.typed.split('')
+      alter[alter.length - share.right] = data
+      share.typed = alter.join('')
+
+
+frame.on 'resize', ->
+  frame.prompt
 
 frame.on 'exit', (data) ->
   frame
