@@ -4,8 +4,10 @@
 {stdin, stdout} = process
 
 frame = new Frame process
+stdin.resume();
 
-process.stdin.resume()
+frame.on 'input', (data, rawdata) ->
+  console.log data, rawdata
 
-frame.on 'input', (data) ->
-  stdout.write('> ')
+frame.on 'exit', (data) ->
+  process.exit()

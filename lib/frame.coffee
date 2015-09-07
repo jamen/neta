@@ -13,9 +13,13 @@ class Frame
     {@stdin, @stdout, @argv} = process
     @argv = @argv.slice 2
 
-    @stdin.on 'data', (data) =>
-      data = data.toString()
-      @trigger 'input', [data.slice(0,-1)]
+    @stdin.setRawMode true
+
+    @stdin.on 'data', (rawdata) =>
+      data = rawdata.toString()
+      @trigger 'input', [data, rawdata]
+      if rawdata[0] is 3
+        @trigger 'exit', [rawdata[0]]
 
     return
 
@@ -28,3 +32,18 @@ class Frame
       if typeof name is 'string'
         if data instanceof Array and typeof @event[name] isnt 'undefined'
           @event[name].apply this, data
+
+  encode: (input) ->
+    bytes = (x) ->
+      if typeof x is 'string'
+        x.split('').map (c) =>
+          return c.charCodeAt(0)
+
+      else if Array.isArray(x)
+        output = []
+        input.forEach (part) ->
+          output.push bytes(part)
+
+        return output
+
+    return new Buffer([0xb1].concat bytes(input))
