@@ -1,10 +1,10 @@
 {
-  "name": "cluster-cli",
+  "name": "vint",
   "version": "0.0.2",
   "description": "A simple terminal-based chatting client.",
   "main": "index.coffee",
   "bin": {
-    "cluster": "index.coffee"
+    "vint": "index.coffee"
   },
   "repository": {
     "type": "git",
