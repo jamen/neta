@@ -34,16 +34,16 @@ class UI extends EventEmitter
 
   encode: (input) ->
     bytes = (x) ->
+      output = []
       if typeof x is 'string'
-        x.split('').map (c) =>
+        output = x.split('').map (c) =>
           return c.charCodeAt(0)
 
       else if Array.isArray(x)
-        output = []
         input.forEach (part) ->
           output.push bytes(part)
 
-        return output
+      return output
 
     return new Buffer([0x1b].concat bytes(input))
 
@@ -65,12 +65,12 @@ class UI extends EventEmitter
     return @
 
   color: (fore, back) ->
-    @set '[' + @codes.colors[fore].fore + ';' + @codes.colors[back].back + 'm'
+    @set '[' + (if fore? and back? then (@codes.colors[fore].fore + ';' + @codes.colors[back].back) else 0) + 'm'
     return @
 
   format: (code) ->
     code = @codes.format[code]
-    @set('[' + code + 'm')
+    @set('[' + (if code? then code else 0) + 'm')
     return @
 
   erase: ->
@@ -95,27 +95,27 @@ class UI extends EventEmitter
   # Cursor actions
   up: (num) ->
     if typeof num is 'number'
-      @set '[' +num+ 'A'
+      @set '[' + (if num? then num else 1) + 'A'
     return @
 
   down: (num) ->
     if typeof num is 'number'
-      @set '[' +num+ 'B'
+      @set '[' + (if num? then num else 1) + 'B'
     return @
 
   right: (num) ->
     if typeof num is 'number'
-      @set '[' +num+ 'C'
+      @set '[' + (if num? then num else 1) + 'C'
     return @
 
   left: (num) ->
     if typeof num is 'number'
-      @set '[' +num+ 'D'
+      @set '[' + (if num? then num else 1) + 'D'
     return @
 
   pos: (x, y) ->
     if typeof x is 'number' and typeof y is 'number'
-      @set '[' + x + ';' + y + 'H'
+      @set '[' + (if x? then x else 0) + ';' + (if y? then y else 0) + 'H'
     return @
 
   fillLine: ->
