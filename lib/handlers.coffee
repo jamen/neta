@@ -5,7 +5,7 @@ module.exports =
       if (share.typed.length - share.right) isnt 0
         ui.save 'cur'
 
-        share.typed = ((typed)->
+        share.typed = ((typed) ->
           index = share.typed.length - share.right
           return typed.slice(0, index - 1) + typed.slice(index)
         )(share.typed)
