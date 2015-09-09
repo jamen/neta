@@ -19,7 +19,7 @@ ui.on 'input', (data, rawdata) ->
 
   else if isFunction isnt true
     ui.write data
-    if !share.right
+    if not share.right
       share.typed += data
     else
       alter = share.typed.split('')
