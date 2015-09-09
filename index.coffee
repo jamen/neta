@@ -35,5 +35,5 @@ frame.on 'exit', (data) ->
   frame
     .format 'none'
     .color 'none', 'none'
-    .restore('screen')
+    .restore 'screen'
   process.exit()
