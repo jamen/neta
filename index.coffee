@@ -32,8 +32,7 @@ ui.on 'resize', ->
   ui.prompt
 
 ui.on 'exit', (data) ->
-  ui
-    .format 'none'
+  ui.format 'none'
     .color 'none', 'none'
     .restore 'screen'
   process.exit()
