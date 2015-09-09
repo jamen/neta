@@ -10,10 +10,9 @@ ui.build()
 
 share = {typed:'', right:0}
 ui.on 'input', (data, rawdata) ->
-  isFunction = ui.handle 'input functions', [data, rawdata, ui, share]
+  isFunction = ui.handle 'input', [data, rawdata, ui, share]
 
   if rawdata[0] is 13
-    console.log '\n' + share.typed
     share.typed = ''
     ui.prompt()
 

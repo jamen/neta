@@ -1,5 +1,5 @@
 module.exports =
-  'input functions': (data, rawdata, ui, share) ->
+  'input': (data, rawdata, ui, share) ->
     # Delete
     if rawdata[0] is 127
       if (share.typed.length - share.right) isnt 0
