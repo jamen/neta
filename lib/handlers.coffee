@@ -3,12 +3,14 @@ module.exports =
     # Delete
     if rawdata[0] is 127
       if (share.typed.length - share.right) isnt 0
+        ui.save 'cur'
+        burst = share.typed.split('')
+        burst.splice share.typed.length - share.right - 1, 1
+        share.typed = burst.join ''
         ui
-          .set '[1D'
-          .write ' '
-          .set '[1D'
-
-      share.typed = share.typed.slice(0, -1)
+          .prompt share.typed
+          .restore 'cur'
+          .left 1
       return true
 
     # Arrow
