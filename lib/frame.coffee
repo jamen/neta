@@ -1,8 +1,9 @@
 tty = require 'tty'
 fs = require 'fs'
+{EventEmitter} = require 'events'
 
 module.exports =
-class Frame
+class Frame extends EventEmitter
   process: null
   stdin: null
   stdout: null
@@ -21,13 +22,13 @@ class Frame
 
     @stdin.on 'data', (rawdata) =>
       data = rawdata.toString()
-      @trigger 'input', [data, rawdata]
+      @emit 'input', data, rawdata
       if rawdata[0] is 3
-        @trigger 'exit', [rawdata[0]]
+        @emit 'exit', rawdata[0]
 
     @stdout.on 'resize', =>
       @aLine = new Array(@stdout.columns+1).join(' ')
-      @trigger 'resize', []
+      @emit 'resize'
 
     return
 
@@ -151,17 +152,3 @@ class Frame
 
   handle: (name, data) ->
     return @handlers[name]?.apply @, data
-
-  # ~~~
-  # Custom eventing
-  on: (name, func) ->
-    if typeof name is 'string' and typeof func is 'function'
-      @event[name] = func
-    return @
-
-  trigger: (name, data) ->
-    if arguments.length is 2
-      if typeof name is 'string'
-        if data instanceof Array and typeof @event[name] isnt 'undefined'
-          @event[name].apply @, data
-    return @

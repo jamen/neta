@@ -1,7 +1,8 @@
 {Socket} = require 'net'
+{EventEmitter} = require 'events'
 
 module.exports =
-class Client
+class Client extends EventEmitter
   name: null
   location: null
   event: {}
@@ -21,20 +22,6 @@ class Client
             data = {}
 
           if typeof data.type isnt 'undefined'
-            @trigger data.type, [data]
+            @emit data.type, data
 
     return
-
-  # ~~~
-  # Custom eventing
-  on: (name, func) ->
-    if typeof name is 'string' and typeof func is 'function'
-      @event[name] = func
-    return this
-
-  trigger: (name, data) ->
-    if arguments.length is 2
-      if typeof name is 'string'
-        if data instanceof Array and typeof @event[name] isnt 'undefined'
-          @event[name].apply this, data
-    return this
