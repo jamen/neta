@@ -134,12 +134,12 @@ class UI extends EventEmitter
     @color 'none', 'none'
     return @
 
-  prompt: ->
+  prompt: (value) ->
     @pos @stdout.rows, 0
     @color 'black', 'white'
     @fillLine()
     @pos @stdout.rows+1, 0
-    @write '> '
+    @write '> ' + (if typeof value != 'undefined' then value else '')
     return @
 
   build: ->
