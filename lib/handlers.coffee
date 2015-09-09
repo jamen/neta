@@ -4,13 +4,16 @@ module.exports =
     if rawdata[0] is 127
       if (share.typed.length - share.right) isnt 0
         ui.save 'cur'
-        burst = share.typed.split('')
-        burst.splice share.typed.length - share.right - 1, 1
-        share.typed = burst.join ''
-        ui
-          .prompt share.typed
+
+        share.typed = ((typed)->
+          index = share.typed.length - share.right
+          return typed.slice(0, index - 1) + typed.slice(index)
+        )(share.typed)
+
+        ui.prompt share.typed
           .restore 'cur'
           .left 1
+
       return true
 
     # Arrow
