@@ -1,6 +1,5 @@
 tty = require 'tty'
 fs = require 'fs'
-{EventEmitter} = require 'events'
 Core = require './core'
 
 module.exports =
@@ -65,8 +64,15 @@ class UI extends Core
       @write @encode(Array.prototype.slice.call(arguments))
     return @
 
-  color: (fore, back) ->
-    @set '[' + (if fore? and back? then (@codes.colors[fore].fore + ';' + @codes.colors[back].back) else 0) + 'm'
+  color: (data) ->
+    fore = (if data.fore? then data.fore else null)
+    back = (if data.back? then data.back else null)
+    if fore and back
+      @set '[' + @codes.colors[fore].fore + ';' + @codes.colors[back].back + 'm'
+    else if fore
+      @set '[' + @codes.colors[fore].fore + 'm'
+    else if back
+      @set '[' + @codes.colors[back].back + 'm'
     return @
 
   format: (code) ->
@@ -137,7 +143,7 @@ class UI extends Core
 
   prompt: (value) ->
     @pos @stdout.rows, 0
-    @color 'black', 'white'
+    @color {fore: 'black', back: 'white'}
     @fillLine()
     @pos @stdout.rows+1, 0
     @write '> ' + (if typeof value != 'undefined' then value else '')
