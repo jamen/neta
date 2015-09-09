@@ -1,11 +1,14 @@
 #!/usr/bin/env coffee
 
-{UI, Client, Server, codes} = require './lib'
+{UI, Client, Server, codes, Verr} = require './lib'
 {stdin, stdout, argv} = process
 argv = argv.slice 2
 
 ui = new UI process
 stdin.resume();
+
+if argv.length < 1
+  new Verr 'Must supply at least 1 argument... vint <command> [options...]'
 
 ui.build()
 

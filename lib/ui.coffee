@@ -14,8 +14,7 @@ class UI extends Core
     {@stdin, @stdout, @argv} = process
     #@argv = @argv.slice 2
     @line = new Array(@stdout.columns+1).join(' ')
-    @codes = require './codes'
-    @handlers = require './handlers'
+    {@handlers, @codes} = require './'
 
     @stdin.setRawMode true
 
@@ -64,7 +63,6 @@ class UI extends Core
     return @
 
   color: (data) ->
-    console.log @codes
     fore = (if data.fore? then @codes.colors[data.fore].fore else null)
     back = (if data.back? then @codes.colors[data.back].back else null)
     if fore and back
@@ -135,10 +133,10 @@ class UI extends Core
     while @stdout.rows >= i
       @pos i, 0
       @fillLine()
-      @color 'none', back
+      @color {'back': back}
       i++;
     @restore 'cur'
-    @color 'none', 'none'
+    @format 'none'
     return @
 
   prompt: (value) ->
