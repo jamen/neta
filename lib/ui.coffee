@@ -7,16 +7,15 @@ class UI extends Core
   process: null
   stdin: null
   stdout: null
-  event: {}
-  aLine: null
-  codes: null
+  line: null
 
   constructor: (process) ->
     @process = process
     {@stdin, @stdout, @argv} = process
     #@argv = @argv.slice 2
-    @aLine = new Array(@stdout.columns+1).join(' ')
-    {@codes, @handlers} = require './'
+    @line = new Array(@stdout.columns+1).join(' ')
+    @codes = require './codes'
+    @handlers = require './handlers'
 
     @stdin.setRawMode true
 
@@ -27,7 +26,7 @@ class UI extends Core
         @emit 'exit', rawdata[0]
 
     @stdout.on 'resize', =>
-      @aLine = new Array(@stdout.columns+1).join(' ')
+      @line = new Array(@stdout.columns+1).join(' ')
       @emit 'resize'
 
     return
@@ -65,14 +64,15 @@ class UI extends Core
     return @
 
   color: (data) ->
-    fore = (if data.fore? then data.fore else null)
-    back = (if data.back? then data.back else null)
+    console.log @codes
+    fore = (if data.fore? then @codes.colors[data.fore].fore else null)
+    back = (if data.back? then @codes.colors[data.back].back else null)
     if fore and back
-      @set '[' + @codes.colors[fore].fore + ';' + @codes.colors[back].back + 'm'
+      @set '[' + fore + ';' + back + 'm'
     else if fore
-      @set '[' + @codes.colors[fore].fore + 'm'
+      @set '[' + fore + 'm'
     else if back
-      @set '[' + @codes.colors[back].back + 'm'
+      @set '[' + back + 'm'
     return @
 
   format: (code) ->
@@ -126,7 +126,7 @@ class UI extends Core
     return @
 
   fillLine: ->
-    @write @aLine
+    @write @line
     return @
 
   background: (back) ->
