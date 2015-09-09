@@ -1,7 +1,8 @@
 #!/usr/bin/env coffee
 
 {UI, Client, Server, codes} = require './lib'
-{stdin, stdout} = process
+{stdin, stdout, argv} = process
+argv = argv.slice 2
 
 ui = new UI process
 stdin.resume();
@@ -25,7 +26,6 @@ ui.on 'input', (data, rawdata) ->
       alter[alter.length - share.right] = data
       share.typed = alter.join('')
       share.right--
-
 
 ui.on 'resize', ->
   ui.prompt
