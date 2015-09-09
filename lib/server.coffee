@@ -1,7 +1,8 @@
 {EventEmitter} = require 'events'
+Core = require './core'
 
 module.exports =
-class Server extends EventEmitter
+class Server extends Core
   ip: '0.0.0.0'
   port: 1338
   constructor: (ip, port) ->

@@ -1,9 +1,10 @@
 tty = require 'tty'
 fs = require 'fs'
 {EventEmitter} = require 'events'
+Core = require './core'
 
 module.exports =
-class UI extends EventEmitter
+class UI extends Core
   process: null
   stdin: null
   stdout: null
@@ -152,3 +153,7 @@ class UI extends EventEmitter
 
   handle: (name, data) ->
     return @handlers[name]?.apply @, data
+
+  hook: (name, data) ->
+    @[name] = data
+    return @

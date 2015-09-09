@@ -1,8 +1,9 @@
 {Socket} = require 'net'
 {EventEmitter} = require 'events'
+Core = require './Core'
 
 module.exports =
-class Client extends EventEmitter
+class Client extends Core
   name: null
   location: null
   event: {}
