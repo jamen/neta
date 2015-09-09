@@ -1,24 +1,24 @@
 #!/usr/bin/env coffee
 
-{Frame, Client, Server, codes} = require './lib'
+{UI, Client, Server, codes} = require './lib'
 {stdin, stdout} = process
 
-frame = new Frame process
+ui = new UI process
 stdin.resume();
 
-frame.build()
+ui.build()
 
 share = {typed:'', right:0}
-frame.on 'input', (data, rawdata) ->
-  isFunction = frame.handle 'input functions', [data, rawdata, frame, share]
+ui.on 'input', (data, rawdata) ->
+  isFunction = ui.handle 'input functions', [data, rawdata, ui, share]
 
   if rawdata[0] is 13
     console.log '\n' + share.typed
     share.typed = ''
-    frame.prompt()
+    ui.prompt()
 
   else if isFunction isnt true
-    frame.write data
+    ui.write data
     if !share.right
       share.typed += data
     else
@@ -28,11 +28,11 @@ frame.on 'input', (data, rawdata) ->
       share.right--
 
 
-frame.on 'resize', ->
-  frame.prompt
+ui.on 'resize', ->
+  ui.prompt
 
-frame.on 'exit', (data) ->
-  frame
+ui.on 'exit', (data) ->
+  ui
     .format 'none'
     .color 'none', 'none'
     .restore 'screen'

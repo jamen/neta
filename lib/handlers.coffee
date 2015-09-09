@@ -1,9 +1,9 @@
 module.exports =
-  'input functions': (data, rawdata, frame, share) ->
+  'input functions': (data, rawdata, ui, share) ->
     # Delete
     if rawdata[0] is 127
-      if share.typed.length isnt 0
-        frame
+      if (share.typed.length - share.right) isnt 0
+        ui
           .set '[1D'
           .write ' '
           .set '[1D'
@@ -24,7 +24,7 @@ module.exports =
       # Right
       if rawdata[2] is 67
         if share.right isnt 0
-          frame.write data
+          ui.write data
           share.right--
         return true
 
@@ -32,7 +32,7 @@ module.exports =
       # Left
       if rawdata[2] is 68
         if (share.typed.length - share.right) isnt 0
-          frame.write data
+          ui.write data
           share.right++
         return true
 

@@ -3,7 +3,7 @@ fs = require 'fs'
 {EventEmitter} = require 'events'
 
 module.exports =
-class Frame extends EventEmitter
+class UI extends EventEmitter
   process: null
   stdin: null
   stdout: null

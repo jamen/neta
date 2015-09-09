@@ -1,5 +1,5 @@
 module.exports =
-  'Frame': require './frame'
+  'UI': require './ui'
   'Client': require './client'
   'Server': require './server'
   'codes': require './codes'
