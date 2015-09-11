@@ -2,12 +2,13 @@ Core = require './core'
 UI = require './ui'
 module.exports =
 class Verr extends Core
-  constructor: (message) ->
+  constructor: () ->
     ui = new UI process
-    ui.color {fore: 'red'}
-      .write 'Error: '
-      .color {fore: 'yellow'}
-      .write message + '\r\n'
-      .format 'none'
+    @on 'new', (message) ->
+      ui.color {fore: 'red'}
+        .write 'Error: '
+        .color {fore: 'yellow'}
+        .write message + '\r\n'
+        .format 'none'
 
-    process.exit()
+      process.exit()

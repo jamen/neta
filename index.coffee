@@ -3,12 +3,13 @@
 {UI, Client, Server, codes, Verr} = require './lib'
 {stdin, stdout, argv} = process
 argv = argv.slice 2
+error = new Verr
 
 ui = new UI process
 stdin.resume();
 
 if argv.length < 1
-  new Verr 'Must supply at least 1 argument... vint <command> [options...]'
+  error.emit 'new', 'Must supply at least 1 argument... vint <command> [options...]'
 
 ui.build()
 
@@ -31,7 +32,10 @@ ui.on 'input', (data, rawdata) ->
       share.right--
 
 ui.on 'resize', ->
-  ui.prompt
+  ui.background 'black'
+    .save 'cur'
+    .prompt share.typed
+    .restore 'cur'
 
 ui.on 'exit', (data) ->
   ui.format 'none'
