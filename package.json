@@ -2,9 +2,9 @@
   "name": "vint",
   "version": "0.0.2",
   "description": "A simple terminal-based chatting client.",
-  "main": "index.coffee",
+  "main": "index.js",
   "bin": {
-    "vint": "index.coffee"
+    "vint": "index.js"
   },
   "repository": {
     "type": "git",
