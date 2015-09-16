@@ -1,2 +1,2 @@
 # Vint
-A terminal-based chatting client made in CoffeeScript.
+A terminal-based chatting client made in CoffeeScript and Electron.
