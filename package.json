@@ -1,0 +1,24 @@
+{
+  "name": "pheo",
+  "version": "0.0.0",
+  "description": "A chatting client.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JamenMarz/pheo.git"
+  },
+  "keywords": [
+    "chat",
+    "client",
+    "pheo"
+  ],
+  "author": "Jamen Marz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JamenMarz/pheo/issues"
+  },
+  "homepage": "https://github.com/JamenMarz/pheo#readme"
+}
