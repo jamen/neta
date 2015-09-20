@@ -1,2 +1,2 @@
-*.coffee
-*.less
+test/
+!test/index.js
