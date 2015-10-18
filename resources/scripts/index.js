@@ -6,7 +6,18 @@ const $ = require('jquery'),
 let main = remote.getCurrentWindow();
 
 $(function(){
-  $('.tools > div').on('click', function(e){
-    main[e.target.className]();
+  $('.tools .close').on('click', function(){
+    $('.app').addClass('closing');
+    setTimeout(function(){
+      main.close();
+    }, 300);
+  });
+
+  $('.tools .maximize').on('click', function(){
+    main.maximize();
+  });
+
+  $('.tools .minimize').on('click', function(){
+    main.minimize();
   });
 });
