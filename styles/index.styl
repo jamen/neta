@@ -10,19 +10,14 @@ html, body
   font-family $s-pro
 
 .app
+  box-sizing border-box
   position absolute
-  top 0; bottom 0px
-  left 0; right 0px
-  padding 0px 4px 1px 0px
-  border-radius 15px
+  top 0; bottom 0
+  left 0; right 0
+  height 100%
+  border-radius 5px
   overflow hidden
-  opacity 1
-  transition opacity 300ms
-
-  &.closing
-    opacity 0
-  &.maximized
-    box-shadow none !important
+  border 1px solid rgba(#000000, 0.65)
 
 .dragable
   -webkit-app-region drag
@@ -73,7 +68,7 @@ html, body
   .title
     position absolute
     top 0; bottom 0
-    left 250px; right 110px
+    left 250px; right 75px
     text-align center
     font-size 16px
     font-weight 300
@@ -82,10 +77,10 @@ html, body
 
   .tools
     position absolute
-    width 80px
+    width 60px
     top 0; bottom 0
     right 0
-    padding-right 5px
+    padding-right 15px
 
     > div
       display inline-block
