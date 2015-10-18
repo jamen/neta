@@ -7,6 +7,8 @@ html, body
   height 100%
   margin 0
   padding 0
+  border 0
+  overflow hidden
   font-family $s-pro
 
 .app
@@ -17,7 +19,10 @@ html, body
   height 100%
   border-radius 5px
   overflow hidden
-  border 1px solid rgba(#000000, 0.65)
+  border 1px solid #1a1a1a
+
+  &.maximized
+    border-radius 0 !important
 
 .dragable
   -webkit-app-region drag
