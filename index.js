@@ -27,5 +27,5 @@ app.on('ready', function(){
 
   //main.openDevTools();
 
-  main.loadUrl('file://' + path.join(__dirname, 'views', 'index.html'));
+  main.loadUrl('file://' + path.join(__dirname, 'index.html'));
 });
