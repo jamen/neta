@@ -25,7 +25,7 @@ app.on('ready', function(){
 
   main.setTitle('Pheo');
 
-  main.openDevTools();
+  //main.openDevTools();
 
   main.loadUrl('file://' + path.join(__dirname, 'views', 'index.html'));
 });
