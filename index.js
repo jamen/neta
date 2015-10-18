@@ -23,7 +23,9 @@ app.on('ready', function(){
     'center': true
   });
 
-  main.openDevTools();
+  main.setTitle('Pheo');
+
+  //main.openDevTools();
 
   main.loadUrl('file://' + path.join(__dirname, 'views', 'index.html'));
 });
