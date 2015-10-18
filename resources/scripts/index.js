@@ -5,19 +5,17 @@ const $ = require('jquery'),
 
 let main = remote.getCurrentWindow();
 
-$(function(){
-  $('.tools .close').on('click', function(){
+$(() => {
+  $('.tools .close').on('click', () => {
     $('.app').addClass('closing');
-    setTimeout(function(){
+    setTimeout(() => {
       main.close();
-    }, 300);
+    }, 200);
   });
-
-  $('.tools .maximize').on('click', function(){
+  $('.tools .maximize').on('click', () => {
     main.maximize();
   });
-
-  $('.tools .minimize').on('click', function(){
+  $('.tools .minimize').on('click', () => {
     main.minimize();
   });
 });

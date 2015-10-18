@@ -23,6 +23,8 @@ app.on('ready', function(){
     'center': true
   });
 
+  main.setTitle('Pheo');
+
   main.openDevTools();
 
   main.loadUrl('file://' + path.join(__dirname, 'views', 'index.html'));
