@@ -6,7 +6,5 @@ const $ = require('jquery'),
 let main = remote.getCurrentWindow();
 
 $(function(){
-  $('.tools > div').on('click', function(e){
-    main[e.target.className]();
-  });
+  $('.tools > div').on('click', (e) => main[e.target.className]());
 });
