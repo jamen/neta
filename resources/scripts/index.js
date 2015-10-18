@@ -1,4 +1,3 @@
 'use strict';
 
-const $ = require('jquery'),
-      blur = require('blur');
+const $ = require('jquery');
