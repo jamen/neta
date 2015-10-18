@@ -13,11 +13,9 @@ html, body
   box-sizing border-box
   position absolute
   top 0; bottom 0
-  left 0; right 0
+  left 0px; right 0px
   height 100%
-  border-radius 5px
-  overflow hidden
-  border 1px solid rgba(#000000, 0.65)
+  width 100%
 
 .dragable
   -webkit-app-region drag
@@ -44,6 +42,7 @@ html, body
     width 230px
     height 25px
     line-height @height
+    z-index 666
 
     .icon
       position absolute
@@ -114,9 +113,10 @@ html, body
     background-color #dbdbdb
 
   .nav
-    position absolute
+    position fixed
     height 100%
     width 250px
     top 0; bottom 0
     left 0
+    padding-bottom 1px
     background-color rgba(0, 0, 0, 0.84)
