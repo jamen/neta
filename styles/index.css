@@ -7,19 +7,16 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
 }
 .app {
+  box-sizing: border-box;
   position: absolute;
   top: 0;
-  bottom: 5px;
+  bottom: 0;
   left: 0;
-  right: 5px;
+  right: 0;
+  height: 100%;
   border-radius: 5px;
   overflow: hidden;
-  box-shadow: 3px 3px 7px -2px rgba(0,0,0,0.57);
-  opacity: 1;
-  transition: opacity 300ms;
-}
-.app.closing {
-  opacity: 0;
+  border: 1px solid rgba(0,0,0,0.65);
 }
 .dragable {
   -webkit-app-region: drag;
@@ -70,7 +67,7 @@ body {
   top: 0;
   bottom: 0;
   left: 250px;
-  right: 110px;
+  right: 75px;
   text-align: center;
   font-size: 16px;
   font-weight: 300;
@@ -78,11 +75,11 @@ body {
 }
 .head .tools {
   position: absolute;
-  width: 80px;
+  width: 60px;
   top: 0;
   bottom: 0;
   right: 0;
-  padding-right: 5px;
+  padding-right: 15px;
 }
 .head .tools > div {
   display: inline-block;
