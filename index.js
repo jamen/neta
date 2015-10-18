@@ -20,12 +20,11 @@ app.on('ready', function(){
     'height': size.height - 200,
     'frame': false,
     'transparent': true,
-    'center': true
+    'center': true,
+    'title': 'Pheo'
   });
 
-  main.setTitle('Pheo');
-
-  //main.openDevTools();
+  main.openDevTools();
 
   main.loadUrl('file://' + path.join(__dirname, 'views', 'index.html'));
 });
