@@ -4,6 +4,8 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
+  border: 0;
+  overflow: hidden;
   font-family: 'Source Sans Pro', sans-serif;
 }
 .app {
@@ -11,10 +13,15 @@ body {
   position: absolute;
   top: 0;
   bottom: 0;
-  left: 0px;
-  right: 0px;
+  left: 0;
+  right: 0;
   height: 100%;
-  width: 100%;
+  border-radius: 5px;
+  overflow: hidden;
+  border: 1px solid #1a1a1a;
+}
+.app.maximized {
+  border-radius: 0 !important;
 }
 .dragable {
   -webkit-app-region: drag;
@@ -40,7 +47,6 @@ body {
   width: 230px;
   height: 25px;
   line-height: 25px;
-  z-index: 666;
 }
 .head .search .icon {
   position: absolute;
@@ -115,12 +121,11 @@ body {
   background-color: #dbdbdb;
 }
 .container .nav {
-  position: fixed;
+  position: absolute;
   height: 100%;
   width: 250px;
   top: 0;
   bottom: 0;
   left: 0;
-  padding-bottom: 1px;
   background-color: rgba(0,0,0,0.84);
 }
