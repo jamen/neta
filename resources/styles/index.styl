@@ -14,6 +14,11 @@ html, body
   border-radius 5px
   overflow hidden
   box-shadow 3px 3px 7px -2px rgba(0, 0, 0, 0.57)
+  opacity 1
+  transition opacity 300ms
+
+  &.closing
+    opacity 0
 
 .dragable
   -webkit-app-region drag
@@ -56,8 +61,8 @@ html, body
       background-color rgb(28, 109, 168)
       box-sizing border-box
       outline none
-      font-size 16px
-      line-height 1.5
+      font-size 15px
+      line-height 1.6
 
   .title
     position absolute
