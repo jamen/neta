@@ -9,17 +9,20 @@ body {
 .app {
   position: absolute;
   top: 0;
-  bottom: 5px;
+  bottom: 0px;
   left: 0;
-  right: 5px;
-  border-radius: 5px;
+  right: 0px;
+  padding: 0px 4px 1px 0px;
+  border-radius: 15px;
   overflow: hidden;
-  box-shadow: 3px 3px 7px -2px rgba(0,0,0,0.57);
   opacity: 1;
   transition: opacity 300ms;
 }
 .app.closing {
   opacity: 0;
+}
+.app.maximized {
+  box-shadow: none !important;
 }
 .dragable {
   -webkit-app-region: drag;
