@@ -1,0 +1,115 @@
+// out: index.css, compress: true
+
+html, body
+  width 100%
+  height 100%
+  margin 0
+  padding 0
+  font-family Helvetica, Arial, sans-serif
+
+.app
+  position absolute
+  top 0; bottom 5px
+  left 0; right 5px
+  border 1px solid rgba(0,0,0,0.4)
+  border-radius 5px
+  overflow hidden
+  box-shadow 3px 3px 7px -2px rgba(0, 0, 0, 0.57)
+
+.dragable
+  -webkit-app-region drag
+
+.undragable
+  -webkit-app-region none !important
+
+
+.head
+  background-color #131313
+  color #dbdbdb
+  width 100%
+  height 35px
+  padding 5px 0
+
+  > div
+    display inline-block
+    float left
+
+  .search
+    position absolute
+    top 10px;
+    left 10px
+    width 230px
+    height 25px
+
+    .icon
+      position absolute
+      width 15px
+      height 15px
+      top 5px
+      left 7px
+      background-image url(../images/search-icon.svg)
+      background-size 100% 100%
+
+    .input
+      width 100%
+      height 100%
+      border-radius 10px
+      padding-left 30px
+      background-color rgb(28, 109, 168)
+      box-sizing border-box
+      outline none
+      font-size 16px
+      line-height 1.5
+
+  .title
+    position absolute
+    top 0; bottom 0
+    left 250px; right 110px
+    text-align center
+    font-size 16px
+    line-height 2.7
+
+  .tools
+    position absolute
+    width 110px
+    top 0; bottom 0
+    right 0
+    padding-right 5px
+
+    > div
+      display inline-block
+      float left
+      width 15px
+      height 15px
+      border-radius 10px
+      margin 15px 10px
+
+    .close
+      background-color #CF000F
+
+    .minimize
+      background-color #F7CA18
+
+    .maximize
+      background-color #26A65B
+
+
+.container
+  position absolute
+  top 45px; bottom 0
+  left 0; right 0
+
+  .body
+    position absolute
+    height 100%
+    top 0; bottom 0
+    left 250px; right 0
+    background-color #dbdbdb
+
+  .nav
+    position absolute
+    height 100%
+    width 250px
+    top 0; bottom 0
+    left 0
+    background-color rgba(0, 0, 0, 0.84)
