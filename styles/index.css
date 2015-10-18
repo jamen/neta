@@ -4,6 +4,8 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
+  border: 0;
+  overflow: hidden;
   font-family: 'Source Sans Pro', sans-serif;
 }
 .app {
@@ -16,9 +18,10 @@ body {
   height: 100%;
   border-radius: 5px;
   overflow: hidden;
+  border: 1px solid #1a1a1a;
 }
-.app.minimized {
-  border-radius: none !important;
+.app.maximized {
+  border-radius: 0 !important;
 }
 .dragable {
   -webkit-app-region: drag;
