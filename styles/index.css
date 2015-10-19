@@ -4,24 +4,13 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  border: 0;
   overflow: hidden;
   font-family: 'Source Sans Pro', sans-serif;
 }
 .app {
-  box-sizing: border-box;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  display: flex;
+  flex-direction: column;
   height: 100%;
-  border-radius: 5px;
-  overflow: hidden;
-  border: 1px solid #1a1a1a;
-}
-.app.maximized {
-  border-radius: 0 !important;
 }
 .dragable {
   -webkit-app-region: drag;
@@ -29,103 +18,95 @@ body {
 .undragable {
   -webkit-app-region: none !important;
 }
-.head {
-  background-color: #131313;
-  color: #dbdbdb;
+.headbar {
   width: 100%;
   height: 45px;
-  border-bottom: 2px solid rgba(255,255,255,0.2);
+  color: #fff;
+  background-color: #11161b;
 }
-.head > div {
-  display: inline-block;
-  float: left;
-}
-.head .search {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  width: 230px;
-  height: 25px;
-  line-height: 25px;
-}
-.head .search .icon {
-  position: absolute;
-  width: 15px;
-  height: 15px;
-  top: 5px;
-  left: 7px;
-  background-image: url("../images/search-icon.svg");
-  background-size: 100% 100%;
-}
-.head .search .input {
-  width: 100%;
-  height: 100%;
-  border-radius: 10px;
-  padding-left: 30px;
-  background-color: #1c6da8;
-  box-sizing: border-box;
-  outline: none;
-  font-size: 10px;
-}
-.head .title {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 250px;
-  right: 75px;
-  text-align: center;
-  font-size: 16px;
-  font-weight: 300;
+.headbar .app-title {
+  margin: 0;
+  padding: 0;
   line-height: 45px;
+  text-align: center;
+  font-weight: 300;
+  font-size: 25px;
 }
-.head .tools {
-  position: absolute;
-  width: 60px;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  padding-right: 15px;
-}
-.head .tools > div {
-  display: inline-block;
+.headbar .search {
   float: left;
+  position: relative;
+  height: 45px;
+  margin: -45px 0px 0px 0px;
+  background-color: #34495e;
+}
+.headbar .search input {
+  text-indent: 30px;
+}
+.headbar .search .ti-search {
+  line-height: 45px;
+  font-size: 15px;
+}
+.headbar .window-controls {
+  float: right;
+  line-height: 45px;
+  margin: -45px 15px 0px 0px;
+}
+.headbar .window-controls > div {
+  display: inline-block;
   width: 10px;
   height: 10px;
   margin: 18px 5px;
   border-radius: 10px;
   cursor: -webkit-drag;
 }
-.head .tools .close {
+.headbar .window-controls .close {
   background-color: #cf000f;
 }
-.head .tools .minimize {
+.headbar .window-controls .minimize {
   background-color: #f7ca18;
 }
-.head .tools .maximize {
+.headbar .window-controls .maximize {
   background-color: #26a65b;
 }
-.container {
-  position: absolute;
-  top: 45px;
-  bottom: 0;
-  left: 0;
-  right: 0;
+.main {
+  display: flex;
+  flex: 1;
+  background-color: #ecf0f1;
 }
-.container .body {
-  position: absolute;
-  height: 100%;
-  top: 0;
-  bottom: 0;
-  left: 250px;
-  right: 0;
-  background-color: #dbdbdb;
+.main .content {
+  flex: 1;
 }
-.container .nav {
-  position: absolute;
-  height: 100%;
-  width: 250px;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  background-color: rgba(0,0,0,0.84);
+.main .navbar {
+  order: -1;
+  width: 200px;
+  background-color: #24272a;
+}
+.main .navbar .navbar-section {
+  margin-top: 5px;
+}
+.main .navbar .navbar-section .section-title {
+  margin: 0px;
+  padding: 10px 0px;
+  color: #fff;
+  text-transform: uppercase;
+  font-family: 'Lato', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  text-indent: 8px;
+}
+.list-group .group-item {
+  background-color: rgba(255,255,255,0.2);
+  height: 35px;
+  line-height: 30px;
+  padding-left: 8px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.list-group .group-item .group-icon {
+  width: 10%;
+  border-radius: 100%;
+  vertical-align: middle;
+}
+.list-group .group-item .group-title {
+  font-size: 12px;
+  color: #fff;
 }
