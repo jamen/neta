@@ -1,126 +1,93 @@
 
 $s-pro = 'Source Sans Pro', sans-serif
+$lato = 'Lato', sans-serif
 
 html, body
-  width 100%
-  height 100%
-  margin 0
-  padding 0
-  border 0
+  width 100%; height 100%
+  margin 0; padding 0
   overflow hidden
   font-family $s-pro
 
 .app
-  box-sizing border-box
-  position absolute
-  top 0; bottom 0
-  left 0; right 0
+  display flex; flex-direction column
   height 100%
-  border-radius 5px
-  overflow hidden
-  border 1px solid #1a1a1a
-
-  &.maximized
-    border-radius 0 !important
-
 .dragable
   -webkit-app-region drag
-
 .undragable
   -webkit-app-region none !important
 
-
-.head
-  background-color #131313
-  color #dbdbdb
+.headbar
   width 100%
   height 45px
-  border-bottom 2px solid rgba(#fff, 0.2)
-
-  > div
-    display inline-block
-    float left
-
-  .search
-    position absolute
-    top 10px
-    left 10px
-    width 230px
-    height 25px
+  color #fff
+  background-color darken(#566d85, 80%)
+  .app-title
+    margin 0; padding 0
     line-height @height
-
-    .icon
-      position absolute
-      width 15px
-      height 15px
-      top 5px
-      left 7px
-      background-image url(../images/search-icon.svg)
-      background-size 100% 100%
-
-    .input
-      width 100%
-      height 100%
-      border-radius 10px
-      padding-left 30px
-      background-color rgb(28, 109, 168)
-      box-sizing border-box
-      outline none
-      font-size 10px
-
-
-  .title
-    position absolute
-    top 0; bottom 0
-    left 250px; right 75px
     text-align center
-    font-size 16px
     font-weight 300
+    font-size 25px
+  .search
+    float left
+    position relative
+    height 45px
+    margin -45px 0px 0px 0px
+    background-color #34495e
+    input
+      text-indent 30px
+    .ti-search
+      line-height @height
+      font-size 15px
+  .window-controls
+    float right
     line-height @height
-
-
-  .tools
-    position absolute
-    width 60px
-    top 0; bottom 0
-    right 0
-    padding-right 15px
-
+    margin (@height * -1)px 15px 0px 0px
     > div
       display inline-block
-      float left
-      width 10px
-      height @width
+      width 10px; height @width
       margin 18px 5px
       border-radius 10px
       cursor -webkit-drag
 
     .close
       background-color #CF000F
-
     .minimize
       background-color #F7CA18
-
     .maximize
       background-color #26A65B
 
+.main
+  display flex
+  flex 1
+  background-color #ecf0f1
+  .content
+    flex 1
 
-.container
-  position absolute
-  top 45px; bottom 0
-  left 0; right 0
+  .navbar
+    order -1
+    width 200px
+    background-color rgba(darken(#bdc3c7, 80%), 50)
+    .navbar-section
+      margin-top 5px
+      .section-title
+        margin 0px; padding 10px 0px
+        color #fff
+        text-transform uppercase
+        font-family $lato
+        font-size 14px
+        font-weight 300
+        text-indent 8px
 
-  .body
-    position absolute
-    height 100%
-    top 0; bottom 0
-    left 250px; right 0
-    background-color #dbdbdb
-
-  .nav
-    position absolute
-    height 100%
-    width 250px
-    top 0; bottom 0
-    left 0
-    background-color rgba(0, 0, 0, 0.84)
+.list-group
+  .group-item
+    background-color rgba(#fff, 20%)
+    height 35px; line-height @height - 5px
+    padding-left 8px
+    border-bottom 1px solid rgba(#fff, 0.05)
+    .group-icon
+      width 10%
+      border-radius 100%
+      vertical-align middle
+    .group-title
+      font-size 12px
+      color #fff

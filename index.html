@@ -3,27 +3,52 @@
   <head>
     <meta charset="utf-8">
     <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,300,600,700,900' rel='stylesheet' type='text/css'>
-    <link href='styles/index.css' rel='stylesheet' type='text/css'>
-    <script src='scripts/ui.js'></script>
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,100,300,700,900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="icon-fonts/themify-icons.css">
+    <link rel="stylesheet" href="styles/index.css">
+    <script src="scripts/ui.js"></script>
   </head>
-  <body>
-    <div class='app'>
-      <div class='head'>
-        <div class='search'><div class='input' contenteditable='true'></div><div class='icon'></div></div>
-        <div class='title dragable'>Pheo Preview - Custom UI Demo</div>
-        <div class='tools'>
-          <div class='minimize'></div>
-          <div class='maximize'></div>
-          <div class='close'></div>
+  <body class="app">
+    <div class="headbar dragable">
+      <h1 class="app-title">Pheo</h1>
+      <!-- <div class="search undragable">
+        <i class="ti-search"></i>
+        <input type="text" placeholder="Search">
+      </div> -->
+      <div class="window-controls">
+        <div class="minimize"></div>
+        <div class="maximize"></div>
+        <div class="close"></div>
+      </div>
+    </div>
+    <div class="main">
+      <div class="body">
+        test
+      </div>
+      <div class="navbar">
+        <div class="navbar-section">
+          <h3 class="section-title">Groups</h3>
+          <div class="groups list-group">
+            <div class="group-item">
+              <img src="https://avatars0.githubusercontent.com/u/13725538?v=3&s=460" alt="" class="group-icon">
+              <span class="group-title">Programmers' Thinking Pub</span>
+            </div>
+            <div class="group-item">
+              <img src="https://avatars1.githubusercontent.com/u/7419947?v=3&s=460" alt="" class="group-icon">
+              <span class="group-title">CSS Pros</span>
+            </div>
+          </div>
+        </div>
+        <div class="navbar-section">
+          <h3 class="section-title">Friends</h3>
+          <div class="friends list-group">
+            <div class="group-item">
+              <img src="https://avatars2.githubusercontent.com/u/6251703?v=3&s=460" alt="" class="group-icon">
+              <span class="group-title">Jamen Marz (Ramen)</span>
+            </div>
+          </div>
         </div>
       </div>
-
-      <div class='container'>
-        <div class='nav'></div>
-        <div class='body'></div>
-      </div>
-
-
     </div>
   </body>
 </html>
