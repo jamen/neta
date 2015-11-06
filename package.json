@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/JamenMarz/pheo#readme",
   "dependencies": {
-    "jquery": "latest"
+    "jquery": "latest",
+    "vue": "latest"
   }
 }

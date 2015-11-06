@@ -1,112 +1,74 @@
-html,
-body {
+.app-body {
+  display: flex;
+  align-items: stretch;
   width: 100%;
   height: 100%;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  font-family: 'Source Sans Pro', sans-serif;
 }
-.app {
+.app-chat {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #ebebeb;
+}
+.app-control {
+  display: flex;
+  width: 81px;
+  height: 100%;
+  margin-right: 5px;
+}
+.app-control > .action {
+  display: block;
+  width: 11px;
+  height: 11px;
+  margin: 12px 8px;
+  border-radius: 50%;
+}
+.app-control > .action.-close {
+  background-color: #e74c3c;
+}
+.app-control > .action.-min {
+  background-color: #ffca45;
+}
+.app-control > .action.-max {
+  background-color: #2ecc71;
+}
+.app-global {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background-color: none;
+  width: 100%;
+  height: 100%;
+}
+.app-head {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  width: 100%;
+  height: 35px;
+  background-color: #16131f;
+}
+.app-head > .title {
+  -webkit-app-region: drag;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+}
+.app-master {
+  box-sizing: border-box;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  border: 1px solid rgba(0,0,0,0.3);
+  border-radius: 5px;
+}
+.app-master.-maximized {
+  border: 0;
+  border-radius: 0;
+}
+.app-side {
+  width: 300px;
   height: 100%;
-}
-.dragable {
-  -webkit-app-region: drag;
-}
-.undragable {
-  -webkit-app-region: none !important;
-}
-.headbar {
-  width: 100%;
-  height: 45px;
-  color: #fff;
-  background-color: #11161b;
-}
-.headbar .app-title {
-  margin: 0;
-  padding: 0;
-  line-height: 45px;
-  text-align: center;
-  font-weight: 300;
-  font-size: 25px;
-}
-.headbar .search {
-  float: left;
-  position: relative;
-  height: 45px;
-  margin: -45px 0px 0px 0px;
-  background-color: #34495e;
-}
-.headbar .search input {
-  text-indent: 30px;
-}
-.headbar .search .ti-search {
-  line-height: 45px;
-  font-size: 15px;
-}
-.headbar .window-controls {
-  float: right;
-  line-height: 45px;
-  margin: -45px 15px 0px 0px;
-}
-.headbar .window-controls > div {
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  margin: 18px 5px;
-  border-radius: 10px;
-  cursor: -webkit-drag;
-}
-.headbar .window-controls .close {
-  background-color: #cf000f;
-}
-.headbar .window-controls .minimize {
-  background-color: #f7ca18;
-}
-.headbar .window-controls .maximize {
-  background-color: #26a65b;
-}
-.main {
-  display: flex;
-  flex: 1;
-  background-color: #ecf0f1;
-}
-.main .content {
-  flex: 1;
-}
-.main .navbar {
-  order: -1;
-  width: 200px;
-  background-color: #24272a;
-}
-.main .navbar .navbar-section {
-  margin-top: 5px;
-}
-.main .navbar .navbar-section .section-title {
-  margin: 0px;
-  padding: 10px 0px;
-  color: #fff;
-  text-transform: uppercase;
-  font-family: 'Lato', sans-serif;
-  font-size: 14px;
-  font-weight: 300;
-  text-indent: 8px;
-}
-.list-group .group-item {
-  background-color: rgba(255,255,255,0.2);
-  height: 35px;
-  line-height: 30px;
-  padding-left: 8px;
-  border-bottom: 1px solid rgba(255,255,255,0.05);
-}
-.list-group .group-item .group-icon {
-  width: 10%;
-  border-radius: 100%;
-  vertical-align: middle;
-}
-.list-group .group-item .group-title {
-  font-size: 12px;
-  color: #fff;
+  background-color: rgba(0,0,0,0.7);
 }
