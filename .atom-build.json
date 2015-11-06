@@ -1,4 +1,0 @@
-{
-  "cmd": "stylus {FILE_ACTIVE}",
-  "keymap": "ctrl-b"
-}
