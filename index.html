@@ -9,7 +9,7 @@
     <div class='app-global app-master' id='app'>
       <!-- Application head -->
       <div class='app-head'>
-        <div class='title'></div>
+        <div class='title'>Pheo UI demo</div>
         <div class='app-control'>
           <span class='action -max' @click='max'></span>
           <span class='action -min' @click='min'></span>
@@ -19,12 +19,41 @@
 
       <!-- Application body -->
       <div class='app-body'>
+
         <div class='app-side'>
-          <div class='side-head'></div>
-          <div class='side-groups'></div>
-          <div class='side-current'></div>
+          <div class='side-head'>
+            <span class='option -change'></span>
+            <span class='title'>Groups</span>
+            <span class='option -current' @click='toggleMode'></span>
+          </div>
+
+          <div class='side-pages'>
+            <div class='page-expander'>
+              <div class='page -groups'>
+
+                <div class='page-group'>
+                  <img class='icon' src='https://avatars2.githubusercontent.com/u/15117174?v=3&s=200'>
+                  <span class='name'>SoundCove</span>
+                </div>
+
+                <div class='page-group'>
+                  <img class='icon' src='https://avatars3.githubusercontent.com/u/13685326?v=3&s=200'>
+                  <span class='name'>iora</span>
+                </div>
+
+                <div class='page-group'>
+                  <img class='icon' src='https://avatars0.githubusercontent.com/u/12568563?v=3&s=200'>
+                  <span class='name'>Develop JS</span>
+                </div>
+
+              </div>
+              <div class='page -current'></div>
+            </div>
+          </div>
         </div>
+
         <div class='app-chat'></div>
+
       </div>
     </div>
   </body>

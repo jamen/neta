@@ -1,0 +1,15 @@
+// main:../index.styl
+.page-expander
+  width 200%
+  height 100%
+  transition margin 200ms
+
+  // Variants
+  &.-active
+    margin-left -100%
+
+  // Elements
+  > .page
+    width 50%
+    height 100%
+    float left

@@ -4,6 +4,9 @@
   width: 100%;
   height: 100%;
 }
+.app-body.-active > .app-side > .side-head > .option.-current {
+  transform: rotate(180deg);
+}
 .app-chat {
   display: block;
   width: 100%;
@@ -39,6 +42,7 @@
   background-color: none;
   width: 100%;
   height: 100%;
+  font-family: Helvetica, Arial, sans;
 }
 .app-head {
   display: flex;
@@ -53,6 +57,8 @@
   width: 100%;
   text-align: center;
   color: #fff;
+  font-size: 15px;
+  padding: 9px 0;
 }
 .app-master {
   box-sizing: border-box;
@@ -72,4 +78,69 @@
   height: 100%;
   background-color: rgba(0,0,0,0.7);
   overflow: none;
+}
+.page-expander {
+  width: 200%;
+  height: 100%;
+  transition: margin 200ms;
+}
+.page-expander.-active {
+  margin-left: -100%;
+}
+.page-expander > .page {
+  width: 50%;
+  height: 100%;
+  float: left;
+}
+.page-group {
+  box-sizing: border-box;
+  display: flex;
+  width: 100%;
+  padding: 10px;
+}
+.page-group > .icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  border-radius: 3px;
+}
+.page-group > .name {
+  width: 100%;
+  font-size: 15px;
+  color: #fff;
+  padding: 11px 0;
+}
+.side-head {
+  display: flex;
+  width: 100%;
+  height: 40px;
+  background-color: #2d2d2d;
+  -webkit-user-select: none;
+}
+.side-head > .title {
+  display: inline-block;
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  font-size: 16px;
+  padding: 12px;
+}
+.side-head > .option {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin: 10px 15px;
+  background-size: 100% 100%;
+  transition: all 300ms;
+}
+.side-head > .option.-current {
+  background-image: url("../images/right.svg");
+}
+.side-head > .option.-change {
+  background-image: url("../images/gear.svg");
+}
+.side-pages {
+  width: auto;
+  height: 100%;
+  overflow-x: hidden;
 }
