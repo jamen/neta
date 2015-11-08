@@ -8,17 +8,11 @@ let main = remote.getCurrentWindow();
 
 $(function(){
 
-  let comp = {
-    app: {
-      master: $('.app-master'),
-      body: $('.app-body')
-    },
-    page: {
-      title: $('.app-body .app-side .side-head .title')
-    }
-  };
+  const comp = require('./scripts/comp.js'),
+        app = comp.app,
+        side = comp.side;
 
-  let app = new Vue({
+  new Vue({
     el: '#app',
     data: {
       mode: 'groups',
@@ -31,12 +25,12 @@ $(function(){
       toggleMode: function(){
         if (comp.app.body.hasClass('-active')) {
           this.mode = 'groups';
-          comp.app.body.removeClass('-active');
-          comp.page.title.html('Groups');
+          app.body.removeClass('-active');
+          side.title.html('Groups');
         } else {
           this.mode = 'current';
-          comp.app.body.addClass('-active');
-          comp.page.title.html('Current group');
+          app.body.addClass('-active');
+          side.title.html('Current group');
         }
 
       }

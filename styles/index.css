@@ -1,11 +1,14 @@
 .app-body {
   display: flex;
-  align-items: stretch;
+  align-items: flex-start;
   width: 100%;
-  height: 100%;
+  height: calc(100% - 25px);
 }
 .app-body.-active > .app-side > .side-head > .option.-current {
   transform: rotate(180deg);
+}
+.app-body.-active > .app-side > .side-pages > .page-expander {
+  left: -100%;
 }
 .app-chat {
   display: block;
@@ -44,6 +47,17 @@
   height: 100%;
   font-family: Helvetica, Arial, sans;
 }
+::-webkit-scrollbar {
+  width: 6px;
+  background-color: transparent;
+  transition: background 200ms;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #6b6b6b;
+}
+*:hover::-webkit-scrollbar {
+  background-color: rgba(0,0,0,0.4);
+}
 .app-head {
   display: flex;
   flex-direction: row;
@@ -60,6 +74,10 @@
   font-size: 15px;
   padding: 9px 0;
 }
+.app-head > .filler {
+  width: 81px;
+  height: 100%;
+}
 .app-master {
   box-sizing: border-box;
   overflow: hidden;
@@ -74,41 +92,58 @@
   border-radius: 0;
 }
 .app-side {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
   width: 300px;
   height: 100%;
   background-color: rgba(0,0,0,0.7);
   overflow: none;
 }
 .page-expander {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
   width: 200%;
-  height: 100%;
-  transition: margin 200ms;
-}
-.page-expander.-active {
-  margin-left: -100%;
+  transition: left 400ms;
+  overflow: hidden;
 }
 .page-expander > .page {
+  box-sizing: border-box;
   width: 50%;
   height: 100%;
   float: left;
+  overflow: auto;
+}
+.page-expander > .page.-groups {
+  padding-bottom: 15px;
 }
 .page-group {
   box-sizing: border-box;
   display: flex;
+  align-items: stretch;
   width: 100%;
   padding: 10px;
+  background-color: transparent;
+  transition: background 100ms;
 }
 .page-group > .icon {
+  float: left;
   width: 40px;
   height: 40px;
   margin-right: 10px;
   border-radius: 3px;
 }
 .page-group > .name {
+  float: left;
   width: 100%;
   font-size: 15px;
   color: #fff;
   padding: 11px 0;
+}
+.page-group:hover {
+  background-color: #383838;
 }
 .side-head {
   display: flex;
@@ -140,6 +175,8 @@
   background-image: url("../images/gear.svg");
 }
 .side-pages {
+  position: relative;
+  display: block;
   width: auto;
   height: 100%;
   overflow-x: hidden;

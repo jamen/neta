@@ -2,17 +2,27 @@
 .page-group
   box-sizing border-box
   display flex
+  align-items stretch
   width 100%
   padding 10px
+  background-color transparent
+  transition background 100ms
 
+  // Elements
   > .icon
+    float left
     width 40px
     height 40px
     margin-right 10px
     border-radius 3px
 
   > .name
+    float left
     width 100%
     font-size 15px
     color #FFF
     padding 11px 0
+
+  // Events
+  &:hover
+    background-color #383838
