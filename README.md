@@ -1,5 +1,12 @@
 # Pheo
-A decentralized and hackable chatting client. 
+A decentralized and hackable chatting client.
+
+### Testing
+(Requires Node & npm)
+
+ 1. `npm install -g electron-prebuilt`
+ 2. Clone this repo.
+ 3. `electron ./pheo`
 
 ### Contributing
  1. Fork and clone.
