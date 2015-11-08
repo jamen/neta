@@ -7,6 +7,9 @@
 .app-body.-active > .app-side > .side-head > .option.-current {
   transform: rotate(180deg);
 }
+.app-body.-active > .app-side > .side-head > .option.-change {
+  opacity: 0;
+}
 .app-body.-active > .app-side > .side-pages > .page-expander {
   left: -100%;
 }
@@ -172,6 +175,7 @@
   background-image: url("../images/right.svg");
 }
 .side-head > .option.-change {
+  opacity: 1;
   background-image: url("../images/gear.svg");
 }
 .side-pages {
