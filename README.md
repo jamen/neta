@@ -5,8 +5,9 @@ A decentralized and hackable chatting client.
 (Requires Node & npm)
 
  1. `npm install -g electron-prebuilt`
- 2. Clone this repo.
- 3. `electron ./pheo`
+ 2. Clone this repo and `cd` to it.
+ 3. `npm install`.
+ 4. `electron ./pheo`
 
 ### Contributing
  1. Fork and clone.
