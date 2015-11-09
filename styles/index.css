@@ -9,6 +9,7 @@
 }
 .app-body.-active > .app-side > .side-head > .option.-change {
   opacity: 0;
+  pointer-events: none;
 }
 .app-body.-active > .app-side > .side-pages > .page-expander {
   left: -100%;

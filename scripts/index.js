@@ -37,7 +37,7 @@ $(function(){
     }
   });
 
-  main.on('maximize', () => comp.master.addClass('-maximized'));
-  main.on('unmaximize', () => comp.master.removeClass('-maximized'));
+  main.on('maximize', () => app.master.addClass('-maximized'));
+  main.on('unmaximize', () => app.master.removeClass('-maximized'));
 
 });
