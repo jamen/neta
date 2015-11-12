@@ -4,7 +4,7 @@ _Requires node and npm._
  1. Fork this repository on GitHub.
  2. Clone your fork locally and `cd` into it.
  3. Fetch dependecies with `npm install`
- 4. Create a new branch such as `fix-issue-245`.
+ 4. Create a new branch such as `fix/issue-1337` or `feature/unicorns`.
  5. Commit changes and push.
  6. Create a pull request on GitHub.
 
