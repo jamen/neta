@@ -1,4 +1,4 @@
-# Pheo
+# Socii
 A decentralized and hackable chatting client.
 
 ### Testing
