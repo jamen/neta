@@ -1,23 +1,23 @@
 {
-  "name": "pheo",
+  "name": "socii",
   "version": "0.0.0",
   "description": "A chatting client.",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JamenMarz/pheo.git"
+    "url": "git+https://github.com/jamen/socii.git"
   },
   "keywords": [
     "chat",
     "client",
-    "pheo"
+    "customizable"
   ],
   "author": "Jamen Marz",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/JamenMarz/pheo/issues"
+    "url": "https://github.com/jamen/socii/issues"
   },
-  "homepage": "https://github.com/JamenMarz/pheo#readme",
+  "homepage": "https://github.com/jamen/socii#readme",
   "dependencies": {
     "jquery": "latest",
     "vue": "latest"
