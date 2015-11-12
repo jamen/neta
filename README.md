@@ -10,8 +10,4 @@ A decentralized and hackable chatting client.
  4. `electron .`
 
 ### Contributing
- 1. Fork and clone.
- 2. `npm install` dependencies
- 3. Create a new branch to apply your updates on.
- 4. Commit some changes to that branch
- 5. Push and open a PR.
+Please see the [CONTRIBUTING.md](CONTRIBUTING.md) file for more information.
