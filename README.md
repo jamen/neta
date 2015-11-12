@@ -1,5 +1,5 @@
 # Socii
-A decentralized and hackable chatting client.
+A decentralized and customizable chatting client.
 
 ### Testing
 (Requires Node & npm)
