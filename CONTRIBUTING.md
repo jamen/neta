@@ -27,4 +27,4 @@ Some guidelines we hope you follow when contributing code to Socii.
 Some guidelines we hope you follow when creating a issue for Socii.
  - Search open and closed issues first.
  - If you've hit a problem in a closed issue, create a new one and reference the old one.
- - Put your operating system and version of Socii.
+ - State your operating system and version of Socii.
