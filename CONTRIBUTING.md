@@ -30,3 +30,6 @@ Some guidelines we hope you follow when creating a issue for Socii.
  - Search open and closed issues first.
  - If you've hit a problem in a closed issue, create a new one and reference the old one.
  - State your operating system and version of Socii.
+
+## Styling
+Socii uses [RSCSS](http://rscss.io) and [Stylus](http://stylus-lang.com) for it's layout.  Each component is a seperate file, but their elements and variants are also included in the same file.  All defualt styles go in `style/`
