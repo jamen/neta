@@ -22,7 +22,7 @@ Some guidelines we hope you follow when contributing code to Socii.
  - Mention the issue number in a commit message or a pull request message (preferably the title).
 
 ### Adding a new feature
- - Open a issue to propose your idea before you add it, so you don't waste your time if we don't except it.
+ - Open a issue to propose your idea before you add it, so you don't waste your time if we don't accept it.
  - Prefix your branch with `feature/`, such as `feature/kittens` or `feature/flaming-explosive-robots`.
  - Create a new test for the feature you added.
 
