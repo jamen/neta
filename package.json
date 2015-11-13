@@ -4,7 +4,7 @@
   "description": "A chatting client.",
   "main": "index.js",
   "scripts": {
-    "run": "npm install -g electron-prebuilt; electron ."
+    "run": "npm install; electron ."
   },
   "repository": {
     "type": "git",
@@ -24,5 +24,8 @@
   "dependencies": {
     "jquery": "latest",
     "vue": "latest"
+  },
+  "devDependencies": {
+    "electron-prebuilt": "latest"
   }
 }
