@@ -3,6 +3,9 @@
   "version": "0.0.0",
   "description": "A chatting client.",
   "main": "index.js",
+  "scripts": {
+    "run": "npm install -g electron-prebuilt; electron ."
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jamen/socii.git"
