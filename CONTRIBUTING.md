@@ -14,7 +14,7 @@ Take a look at issues labeled with [_help wanted_](https://github.com/jamen/soci
 Some guidelines we hope you follow when contributing code to Socii.
  - Present tense commits. ("Add foo" not "Added foo")
  - Imperative style commits. ("Move with bar" instead of "Moves with bar")
- - Run tests and jshint.
+ - Run tests and jshint your code.
 
 ### Fixing a issue
  - [Open a issue](https://github.com/jamen/socii/issues) on GitHub if it doesn't exist already.
