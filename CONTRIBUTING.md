@@ -32,4 +32,4 @@ Some guidelines we hope you follow when creating a issue for Socii.
  - State your operating system and version of Socii.
 
 ## Styling
-Socii uses [RSCSS](http://rscss.io) and [Stylus](http://stylus-lang.com) for it's layout.  Each component is a seperate file, but their elements and variants are also included in the same file.  All defualt styles go in `style/`
+Socii uses [RSCSS](http://rscss.io) and [Stylus](http://stylus-lang.com) for it's layout.  Each component is a seperate file, but their elements and variants are also included in the same file.  All defualt styles go in the `style/` directory of the repo.  
