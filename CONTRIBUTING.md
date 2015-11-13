@@ -8,7 +8,7 @@ _Requires node and npm._
  5. Commit changes and push.
  6. Create a pull request on GitHub.
 
-Take a look at issues labeled with [_help wanted_](https://github.com/jamen/socii/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22).  If there are none then feel free to look at some other issues.
+Take a look at issues labeled with [_help wanted_](https://github.com/jamen/socii/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22) if you don't know where to start.  If there are none then feel free to poke around in the issue list.
 
 ## Pull Request Guidelines
 Some guidelines we hope you follow when contributing code to Socii.
