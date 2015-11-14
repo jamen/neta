@@ -4,7 +4,8 @@
   "description": "A chatting client.",
   "main": "index.js",
   "scripts": {
-    "socii": "npm install; electron ."
+    "socii": "npm install; electron .",
+    "ssocii": "npm install; electron . --simple"
   },
   "repository": {
     "type": "git",
