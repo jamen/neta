@@ -8,9 +8,5 @@ A decentralized and customizable chatting client.
  2. For non-simple: `npm run socii`<br>
     For simple: `npm run ssocii`
 
-Or for simple mode:
-
- 2.
-
 ### Contributing
 Please see the [CONTRIBUTING.md](CONTRIBUTING.md) file for more information.
