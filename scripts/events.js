@@ -13,7 +13,6 @@ module.exports = function(main){
   .on('maximize', () => app.addClass('-maximized'))
   .on('unmaximize', () => app.removeClass('-maximized'));
 
-  ipc.on('simple', function(simple){
-    if (simple) app.addClass('-simple');
-  });
+  ipc
+  .on('simple', () => app.addClass('-simple'));
 };
