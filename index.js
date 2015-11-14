@@ -2,8 +2,7 @@
 
 const app = require('app'),
       BW = require('browser-window'),
-      path = require('path'),
-      ipc = require('ipc');
+      path = require('path');
 
 // Various tasks to do before the app is ready.
 require('crash-reporter').start();
