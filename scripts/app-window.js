@@ -10,7 +10,8 @@ AppWindow = function(file){
 
   is = {
     'simple': arg('--simple'),
-    'dev': arg('--dev')
+    'dev': arg('--dev'),
+    'menu': arg('--menu')
   },
 
   app = new BrowserWindow({
@@ -21,7 +22,8 @@ AppWindow = function(file){
     'autoHideMenuBar': true,
     'backgroundColor': '#000',
     'center': true,
-    'title': 'Socii'
+    'title': 'Socii',
+    'show': false // Used to prepare the window before showing it.
   }), wc = app.webContents;
 
   if (!is.menu) app.setMenu(null);
@@ -29,6 +31,9 @@ AppWindow = function(file){
   if (is.simple) wc.on('dom-ready', () => wc.send('simple'));
 
   app.loadUrl('file://' + file);
+
+  // Unhide the window once it's finished.
+  wc.on('did-finish-load', () => app.show());
 
   return app;
 };
