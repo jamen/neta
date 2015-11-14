@@ -95,6 +95,19 @@
   border: 0;
   border-radius: 0;
 }
+.app-master.-simple {
+  border: 0;
+  border-radius: 0;
+}
+.app-master.-simple > .app-body {
+  height: 100%;
+}
+.app-master.-simple > .app-body > .app-side {
+  background-color: #141414;
+}
+.app-master.-simple > .app-head {
+  display: none;
+}
 .app-side {
   display: flex;
   flex-direction: column;
