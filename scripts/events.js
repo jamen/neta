@@ -1,10 +1,7 @@
 'use strict';
 
-const remote = require('remote'),
-           $ = require('jquery'),
-         ipc = require('ipc');
-
-console.log(ipc);
+const $ = require('jquery'),
+      ipc = require('ipc');
 
 module.exports = function(main){
   const app = $('#app');
