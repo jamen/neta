@@ -24,7 +24,7 @@ app.on('ready', function(){
     'frame': simple,
     'transparent': !simple,
     'center': true,
-    'title': 'Pheo'
+    'title': 'Socii'
   });
 
   main.webContents.on('dom-ready', function(){
