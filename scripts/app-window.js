@@ -1,10 +1,9 @@
 'use strict';
 
 const BrowserWindow = require('browser-window'),
+      arg = item => process.argv.indexOf(item) !== -1;
 
-arg = item => process.argv.indexOf(item) !== -1,
-
-AppWindow = function(file){
+module.exports = function(file){
   const screen = require('screen'),
         size = screen.getPrimaryDisplay().workAreaSize,
 
@@ -32,10 +31,8 @@ AppWindow = function(file){
 
   app.loadUrl('file://' + file);
 
-  // Unhide the window once it's finished.
+  // Show the window once it's finished.
   wc.on('did-finish-load', () => app.show());
 
   return app;
 };
-
-module.exports = AppWindow
