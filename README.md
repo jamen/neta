@@ -7,7 +7,7 @@ A decentralized and customizable chatting client.
  1. Clone this repo and `cd` to it.
  2. Install dependencies `npm install` 
  3. For non-simple: `npm run socii`<br>
-    For simple: `npm run ssocii`
+    For simple: `npm run simple`
 
 ### Contributing
 Please see the [CONTRIBUTING.md](CONTRIBUTING.md) file for more information.
