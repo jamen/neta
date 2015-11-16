@@ -5,7 +5,8 @@ A decentralized and customizable chatting client.
 (Requires Node & npm)
 
  1. Clone this repo and `cd` to it.
- 2. For non-simple: `npm run socii`<br>
+ 2. Install dependencies `npm install` 
+ 3. For non-simple: `npm run socii`<br>
     For simple: `npm run ssocii`
 
 ### Contributing
