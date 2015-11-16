@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "socii": "electron .",
-    "ssocii": "electron . --simple"
+    "simple": "electron . --simple"
   },
   "repository": {
     "type": "git",
