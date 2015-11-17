@@ -5,24 +5,24 @@ const path = require('path'),
       stylus = require('stylus'),
       exists = fs.existsSync,
       mkdir = fs.mkdirSync,
-      write = fs.writeFileSync;
+      write = fs.writeFileSync,
+
+base = path.join(process.env.HOME || '~', '.socii'),
+dir = {
+  base: base,
+  settings: path.join(base, 'settings.json'),
+  servers: path.join(base, 'servers.json'),
+  style: path.join(base, 'style.styl'),
+  themes: path.join(base, 'themes'),
+  packages: path.join(base, 'packages'),
+  defaults: path.join(base, 'defaults')
+};
 
 module.exports = function(){
-  let base = path.join(process.env.HOME || '~', '.socii'),
-  dir = {
-    base: base,
-    settings: path.join(base, 'settings.json'),
-    servers: path.join(base, 'servers.json'),
-    style: path.join(base, 'style.styl'),
-    themes: path.join(base, 'themes'),
-    packages: path.join(base, 'packages'),
-    defaults: path.join(base, 'defaults')
-  };
-
   let item = null, what = '';
   for (let key in dir) {
     item = dir[key];
-    if (path.extname(item) === '') what = 'folder';
+    if (!path.extname(item)) what = 'folder';
     else what = 'file';
 
     if (!exists(item)) {
