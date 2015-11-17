@@ -29,7 +29,7 @@ module.exports = function(file){
   if (is.dev) app.openDevTools();
   if (is.simple) wc.on('dom-ready', () => wc.send('simple'));
 
-  app.loadUrl('file://' + file);
+  app.loadURL('file://' + file);
 
   // Show the window once it's finished.
   wc.on('did-finish-load', () => app.show());
