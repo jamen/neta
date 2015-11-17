@@ -69,5 +69,3 @@ module.exports = function(){
     servers: servers
   };
 };
-
-console.log(module.exports());
