@@ -24,7 +24,8 @@
   "homepage": "https://github.com/jamen/socii#readme",
   "dependencies": {
     "jquery": "latest",
-    "vue": "latest"
+    "vue": "latest",
+    "stylus": "latest"
   },
   "devDependencies": {
     "electron-prebuilt": "latest"
