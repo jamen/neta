@@ -11,4 +11,5 @@ app.commandLine.appendSwitch('enable-transparent-visuals');
 // App
 app.on('ready', function(){
   const main = window(path.join(__dirname, 'index.html'));
+  main.openDevTools({detach: true});
 });
