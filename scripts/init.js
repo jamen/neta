@@ -58,11 +58,8 @@ module.exports = function(){
   try { style = fs.readFileSync(dir.style).toString(); }
   catch (e) { console.log(' ! failed to read %s', dir.style); }
   stylus(style).render(function(err, css){
-    if (err) {
-      console.log(' ! failed to render %s as stylus', dir.style);
-      return;
-    }
-    style = css;
+    if (err) console.log(' ! failed to render %s as stylus', dir.style);
+    else style = css;
   });
 
   // Return results
