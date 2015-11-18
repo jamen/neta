@@ -29,14 +29,16 @@ module.exports = function(file){
   }), wc = app.webContents;
 
   if (!is.menu) app.setMenu(null);
-  if (!is.disableStyle) wc.insertCSS(socii.style);
   if (is.dev) app.openDevTools();
-  if (is.simple) wc.on('dom-ready', () => wc.send('simple'));
+  wc.on('dom-ready', () => {
+    if (is.simple) wc.send('simple');
+  });
+  wc.on('did-finish-load', () => {
+    if (!is.disableStyle) wc.insertCSS(socii.style);
+    app.show();
+  });
 
   app.loadURL('file://' + file);
-
-  // Show the window once it's finished.
-  wc.on('did-finish-load', () => app.show());
 
   return app;
 };
