@@ -68,6 +68,7 @@
   background-color: rgba(0,0,0,0.4);
 }
 .app-head {
+  -webkit-user-select: none;
   display: flex;
   flex-direction: row;
   align-items: stretch;
