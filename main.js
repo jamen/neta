@@ -1,5 +1,5 @@
 'use strict';
 
-/* index.js
+/* main.js
  * Main initiation file of campfire.
  * * */
