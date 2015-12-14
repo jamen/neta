@@ -1,4 +1,4 @@
-# Socii
+# campfire
 A decentralized and customizable chatting client.
 
 ### Testing
@@ -6,7 +6,7 @@ A decentralized and customizable chatting client.
 
  1. Clone this repo and `cd` to it.
  2. Install dependencies `npm install` 
- 3. For non-simple: `npm run socii`<br>
+ 3. For non-simple: `npm run campfire`<br>
     For simple: `npm run simple`
 
 ### Contributing
