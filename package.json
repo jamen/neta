@@ -4,8 +4,7 @@
   "description": "A chatting client.",
   "main": "index.js",
   "scripts": {
-    "test": "electron .",
-    "simple": "electron . --simple"
+    "test": "electron ."
   },
   "repository": {
     "type": "git",
