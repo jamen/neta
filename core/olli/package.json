@@ -1,9 +1,0 @@
-{
-  "name": "olli",
-  "version": "0.0.0",
-  "description": "Campfire's default theme, Olli.",
-  "main": "index.styl",
-  "type": "theme",
-  "author": "Jamen Marz",
-  "license": "MIT"
-}
