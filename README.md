@@ -12,8 +12,11 @@ Campfire has 3 targets for each supported OS: `linux`, `macos`, and `windows`.  
 
 ```
 $ make linux
+...
 $ make macos
+...
 $ make windows
+...
 ```
 
 Alternatively you can use the `all` target (or simple run `make`) to build all 3 sources.
