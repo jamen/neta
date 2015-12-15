@@ -20,3 +20,9 @@ Options are specified after the command in a `KEY=VALUE` format.  All options ha
  - `DIST`: Folder to output app(s) in. (Default `./dist`)
  - `VERSION`: The version of Electron to use.
  - `NAME`: The name for the binary output (Default `campfire`)
+
+## Contributing
+Please see the [CONTRIBUTING.md](CONTRIBUTING.md) file for information on guidelines towards helping Campfire.
+
+## License
+Campfire is completely free-to-use and licensed under the MIT License.  See [LICENSE](LICENSE) for more information.
