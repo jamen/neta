@@ -4,7 +4,7 @@
   "description": "A chatting client.",
   "main": "index.js",
   "scripts": {
-    "campfire": "electron .",
+    "test": "electron .",
     "simple": "electron . --simple"
   },
   "repository": {
