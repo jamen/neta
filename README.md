@@ -6,6 +6,8 @@ Campfire is a decentralized chatting client.  It's highly configurable and based
 Campfire is documented with GitHub's [Wiki pages](https://github.com/jamen/campfire/wiki)
 
 ## Building
+Building requires [NodeJS](http://nodejs.org) and [npm](http://npmjs.com/) to use [electron-packager](https://github.com/maxogden/electron-packager).
+
 Campfire has 3 targets for each supported OS: `linux`, `macos`, and `windows`.  You can use them accordingly with `make` to package the source.  By default, packages output to `dist/`.
 
 ```
