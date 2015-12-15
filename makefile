@@ -1,12 +1,12 @@
 DIST = ./dist
 NAME = campfire
-VERS = 0.36.0
 ARCH = x64
+VERSION = 0.36.0
 PLATFORM = 'linux'
 pack = node_modules/electron-packager/cli.js
 
 all:
-	$(pack) . $(NAME) --platform=$(PLATFORM) --arch=$(ARCH) --version=$(VERS) --out=$(DIST) --prune --ignore=node_modules/\.bin
+	$(pack) . $(NAME) --platform=$(PLATFORM) --arch=$(ARCH) --version=$(VERSION) --out=$(DIST) --prune --ignore=node_modules/\.bin
 
 zip: all
 	tar -zcvf dist/campfire-$(PLATFORM)-$(ARCH).tar.gz dist/campfire-$(PLATFORM)-$(ARCH)
