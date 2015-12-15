@@ -1,22 +1,18 @@
-dist = ./dist
-ver = "0.36.0"
-name = "campfire"
+DIST = ./dist
+NAME = campfire
+VERS = 0.36.0
+ARCH = x64
+PLATFORM = 'linux'
 pack = node_modules/electron-packager/cli.js
 
-all: linux macos windows
+all:
+	$(pack) . $(NAME) --platform=$(PLATFORM) --arch=$(ARCH) --version=$(VERS) --out=$(DIST) --prune --ignore=node_modules/\.bin
 
-linux:
-	$(pack) . $(name) --platform=linux --arch=x64 --version=$(ver) --out=$(dist) --prune
-
-macos:
-	$(pack) . $(name) --platform=darwin --arch=x64 --version=$(ver) --out=$(dist) --prune
-
-windows:
-	$(pack) . $(name) --platform=win32 --arch=x64 --version=$(ver) --out=$(dist) --prune
-
+zip: all
+	tar -zcvf dist/campfire-$(PLATFORM)-$(ARCH).tar.gz dist/campfire-$(PLATFORM)-$(ARCH)
 
 clean:
-	rm -rf $(dist)
+	rm -rf $(DIST)
 
 install: linux
 	mv $(dist)/campfire-linux-x64 /usr/share/campfire
