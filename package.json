@@ -29,6 +29,8 @@
   },
   "devDependencies": {
     "electron-packager": "^5.1.1",
-    "electron-prebuilt": "latest"
+    "electron-prebuilt": "latest",
+    "eslint": "^1.10.3",
+    "eslint-config-google": "^0.3.0"
   }
 }
