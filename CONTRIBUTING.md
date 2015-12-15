@@ -19,7 +19,14 @@ Here is a list of some widespread things in Campefire (in no particular order):
  - [Vue](http://vuejs.org/)
 
 ## Guidelines
-Our guidelines are _config-form_ ([eslint config](.eslintrc.json)).  
+Our guidelines are _config-form_, we use [eslint](.eslintrc.json) to keep a consistent style throughout the code, to keep it neat.  Remember to always lint your code when making a contribution!
+
+Campfire has made this easy for you by setting up a npm-script, `"lint"`:
+```
+$ npm run lint
+```
+
+We recommend you use a plugin for linting inside of your editor / IDE.  For instance, [linter-eslint](https://atom.io/packages/linter-eslint) when using [Atom](http://atom.io/) makes life a lot easier.
 
 ## What do I do?
 Take a look at issues labeled with [`help wanted`](https://github.com/jamen/campfire/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22) if you don't know where to start.  If there are none then feel free to poke around in the rest of the issues.
