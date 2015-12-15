@@ -4,3 +4,23 @@ Campfire is a decentralized chatting client.  It's highly configurable and based
 
 ## Documentation
 Campfire is documented with GitHub's [Wiki pages](https://github.com/jamen/campfire/wiki)
+
+## Building
+Campfire has 3 targets for each supported OS: `linux`, `macos`, and `windows`.  You can use them accordingly with `make` to package the source.  By default, packages output to `dist/`.
+
+```
+$ make linux
+$ make macos
+$ make windows
+```
+
+Alternatively you can use the `all` target (or simple run `make`) to build all 3 sources.
+
+## Installation
+There are currently no installers yet, like `.pkg` and `.deb`, so you have to build from the source and install it yourself.
+
+However, you can use the `install` target to install on Linux very easily:
+```
+# make install
+```
+(Needs correct privileges, run with `sudo`)
