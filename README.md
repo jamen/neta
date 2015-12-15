@@ -5,7 +5,7 @@ Campfire is a decentralized chatting client.  It's highly configurable and based
 ## Installing
 Campfire is built per release and can be found on [the "Releases" tab](https://github.com/jamen/campfire/releases).
 
-Alternatively, Campfire can be packaged from the source using the `makefile`, however note that this method requires [NodeJS](http://nodejs.org/) and [npm](http://npmjs.com/) in order to use [electron-packager](https://github.com/maxogden/electron-packager).
+Alternatively, Campfire can be packaged from the source using the `makefile`; however, note that this method requires [NodeJS](http://nodejs.org/) and [npm](http://npmjs.com/) in order to use [electron-packager](https://github.com/maxogden/electron-packager).
 
 Example:
 ```
