@@ -1,6 +1,6 @@
 import app from 'app';
-// import campfire from './lib';
-// import BrowserWindow from 'browser-window';
+import campfire from './lib';
+import BrowserWindow from 'browser-window';
 
 /* main.js
  * Main initiation file of campfire.
@@ -9,7 +9,7 @@ import app from 'app';
 let main = app.main = {};
 
 app.on('ready', () => {
-
+  app.main = new BrowserWindow(campfire.main);
 });
 
 app.on('load-theme', function(theme) {
