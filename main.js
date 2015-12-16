@@ -1,4 +1,6 @@
+import fs from 'fs';
 import app from 'app';
+import {join} from 'path';
 import campfire from './lib';
 import BrowserWindow from 'browser-window';
 
@@ -9,13 +11,15 @@ import BrowserWindow from 'browser-window';
 let main = app.main = {};
 
 app.on('ready', () => {
-  app.main = new BrowserWindow(campfire.main);
-});
+  main = app.main = new BrowserWindow(campfire.main);
+  main.loadURL('file://' + join(__dirname, '/index.html'));
 
-app.on('load-theme', function(theme) {
-  main.webContents.insertCSS(theme);
-});
-
-app.on('load-plugin', function(plugin, gesture = true) {
-  main.webContents.executeJavaScript(plugin, gesture);
+  fs.readdir(campfire.dirs.packages, packages => {
+    campfire.load(packages);
+    if (main.webContents.isLoading()) {
+      main.webContents.on('dom-ready', () => campfire.load(packages));
+    } else {
+      campfire.load(packages);
+    }
+  });
 });
