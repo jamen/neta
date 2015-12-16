@@ -26,6 +26,12 @@ Campfire has made this easy for you by setting up a npm-script, `"lint"`:
 $ npm run lint
 ```
 
+## Testing
+`electron-prebuild` is included as a developer depdendency.  It's bound to `"test"` in the npm scripts, so you can test it with:
+```
+$ npm test
+```
+
 We recommend you use a plugin for linting inside of your editor / IDE.  For instance, [linter-eslint](https://atom.io/packages/linter-eslint) when using [Atom](http://atom.io/) makes life a lot easier.
 
 ## What do I do?
