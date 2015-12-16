@@ -6,6 +6,12 @@ import app from 'app';
  * Main initiation file of campfire.
  * * */
 
+let main = app.main = {};
+
 app.on('ready', () => {
 
+});
+
+app.on('load-plugin', function(plugin, gesture = true) {
+  main.webContents.executeJavaScript(plugin, gesture);
 });
