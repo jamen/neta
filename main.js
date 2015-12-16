@@ -14,12 +14,16 @@ app.on('ready', () => {
   main = app.main = new BrowserWindow(campfire.main);
   main.loadURL('file://' + join(__dirname, '/index.html'));
 
-  fs.readdir(campfire.dirs.packages, packages => {
-    campfire.load(packages);
-    if (main.webContents.isLoading()) {
-      main.webContents.on('dom-ready', () => campfire.load(packages));
-    } else {
+  fs.readdir(campfire.dirs.packages, (err, packages) => {
+    if (!err) {
       campfire.load(packages);
+      if (main.webContents.isLoading()) {
+        main.webContents.on('dom-ready', () => campfire.load(packages));
+      } else {
+        campfire.load(packages);
+      }
+    } else {
+      console.warn('Could not load packages');
     }
   });
 });
