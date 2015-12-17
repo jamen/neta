@@ -14,7 +14,7 @@ zip: all
 clean:
 	rm -rf $(DIST)
 
-install: linux
+install:
 	mv $(dist)/neta-linux-x64 /usr/share/neta
 	ln -s /usr/share/neta/neta /usr/bin/neta
 
