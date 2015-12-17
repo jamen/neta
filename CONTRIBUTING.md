@@ -11,12 +11,12 @@ Neta encourages and welcomes contributing as long as you follow our guidelines a
 ## Prerequisites (What you should know)
 Neta is built on many technologies, some of which you may need to know when wanting to contribute.  We want Neta to be well-made, so we are pretty strict about pull requests!
 
-Here is a list of some widespread things in Campefire (in no particular order):
+Here is a list of some widespread things in Neta (in no particular order):
  - [ES2015](https://babeljs.io/docs/learn-es2015/) (JavaScript)
  - [Electron](http://electron.atom.io/)
  - [NodeJS](http://nodejs.org/)
  - [Stylus](http://stylus-lang.com/)
- - [Vue](http://vuejs.org/)
+ - [React](http://facebook.github.io/react/)
 
 ## Guidelines
 Our guidelines are _config-form_, we use [eslint](.eslintrc.json) to keep a consistent style throughout the code, to keep it neat.  Remember to always lint your code when making a contribution!
