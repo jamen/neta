@@ -3,7 +3,7 @@
   "rules": {
     "require-jsdoc": 2,
     "valid-jsdoc": [2, {
-      "requireReturnDescription": false,
+      "requireReturn": false,
       "prefer": {
         "returns": "return",
         "arg": "param",
