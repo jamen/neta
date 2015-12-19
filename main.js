@@ -1,7 +1,7 @@
-import { app, BrowserWindow } from 'electron';
 import { join } from 'path';
 import neta from './lib';
 import minimist from 'minimist';
+import { app, BrowserWindow, ipcMain } from 'electron';
 
 const args = neta.args = minimist(process.argv.slice(2));
 let main = neta.main = {};
@@ -18,4 +18,8 @@ app.on('ready', () => {
 
 app.on('window-all-closed', function quit() {
   app.quit();
+});
+
+ipcMain.on('neta-theme-injected', () => {
+  main.show();
 });
