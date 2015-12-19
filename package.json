@@ -29,7 +29,8 @@
     "babel-register": "^6.3.13",
     "jquery": "^2.1.4",
     "minimist": "^1.2.0",
-    "stylus": "^0.53.0"
+    "stylus": "^0.53.0",
+    "olli": "jamen/neta-olli"
   },
   "devDependencies": {
     "electron-packager": "^5.1.1",
