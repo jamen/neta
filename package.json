@@ -4,7 +4,7 @@
   "description": "A chatting client.",
   "main": "index.js",
   "scripts": {
-    "test": "node_modules/.bin/electron .",
+    "test": "node_modules/.bin/electron . --dev",
     "lint": "node_modules/.bin/eslint ."
   },
   "repository": {
