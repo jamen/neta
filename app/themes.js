@@ -1,7 +1,8 @@
 import $ from 'jquery';
 import fs from 'fs';
 import stylus from 'stylus';
-import { join } from 'path';
+import { join, resolve } from 'path';
+import { ipcRenderer } from 'electron';
 import { settings, packages } from './paths';
 
 /**
@@ -9,20 +10,25 @@ import { settings, packages } from './paths';
  */
 function themes() {
   const { theme: themeName } = require(settings);
-  const theme = join(packages, themeName);
+  let theme = join(packages, themeName);
 
   // Atempt to fetch theme configuration
   let config = {};
   try {
-    config = require(theme, 'package.json');
+    config = require(join(theme, 'package'));
   } catch (e) {
-    throw new Error(`Reference "${themeName}" is not a package`);
+    try {
+      theme = join(__dirname, '..', 'node_modules', themeName);
+      config = require(join(theme, 'package'));
+    } catch (a) {
+      throw new Error(`Reference "${themeName}" is not a package`);
+    }
   }
 
-  // Check that it has required properties
-  if (config.type !== 'theme') {
-    throw new Error(`Package "${themeName}" is not a theme`);
-  }
+  // // Check that it has required properties
+  // if (config.type !== 'theme') {
+  //   throw new Error(`Package "${themeName}" is not a theme`);
+  // }
 
   // Set defaults
   if (typeof config.main !== 'string') {
@@ -30,14 +36,15 @@ function themes() {
   }
 
   // Load theme
-  const root = $($('html').shadowRoot);
+  const root = $('head');
   const themeInject = $('<style></style>');
-  const stylusSource = fs.readFileSync();
+  const stylusSource = fs.readFileSync(resolve(theme, config.main)).toString();
 
   stylus(stylusSource)
   .render(function render(err, css) {
     themeInject.text(css);
     root.append(themeInject);
+    ipcRenderer.send('neta-theme-injected');
   });
 }
 
