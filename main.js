@@ -5,7 +5,7 @@ import neta from './lib';
 let main = neta.main = {};
 
 app.on('ready', () => {
-  main = neta.main = new BrowserWindow(neta.main());
+  main = neta.main = new BrowserWindow(neta.mainWindow());
   main.loadURL('file' + join(__dirname, 'views', 'app.html'));
 });
 
