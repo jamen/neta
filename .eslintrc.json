@@ -1,5 +1,18 @@
 {
   "extends": "airbnb",
+  "rules": {
+    "require-jsdoc": 2,
+    "valid-jsdoc": [2, {
+      "requireReturnDescription": false,
+      "prefer": {
+        "returns": "return",
+        "arg": "param",
+        "argument": "param"
+      }
+    }],
+    "consistent-return": 2,
+    "no-undefined": 2
+  },
   "env": {
     "node": true,
     "browser": true
