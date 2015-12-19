@@ -34,6 +34,7 @@
     "electron-packager": "^5.1.1",
     "electron-prebuilt": "latest",
     "eslint": "^1.10.3",
-    "eslint-config-google": "^0.3.0"
+    "eslint-config-airbnb": "^2.1.1",
+    "eslint-plugin-react": "^3.11.3"
   }
 }

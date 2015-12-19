@@ -1,9 +1,9 @@
-import {app, BrowserWindow} from 'electron';
-import {join} from 'path';
+import { app, BrowserWindow } from 'electron';
+import { join } from 'path';
 import neta from './lib';
 import minimist from 'minimist';
 
-let args = neta.args = minimist(process.argv.slice(2));
+const args = neta.args = minimist(process.argv.slice(2));
 let main = neta.main = {};
 
 app.on('ready', () => {
@@ -12,10 +12,10 @@ app.on('ready', () => {
 
   // Developer
   if (args.dev) {
-    main.openDevTools({detach: true});
+    main.openDevTools({ detach: true });
   }
 });
 
-app.on('window-all-closed', function() {
+app.on('window-all-closed', function quit() {
   app.quit();
 });
