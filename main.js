@@ -6,7 +6,7 @@ let main = neta.main = {};
 
 app.on('ready', () => {
   main = neta.main = new BrowserWindow(neta.mainWindow());
-  main.loadURL('file' + join(__dirname, 'views', 'app.html'));
+  main.loadURL('file://' + join(__dirname, 'view', 'app.html'));
 });
 
 app.on('window-all-closed', function() {
