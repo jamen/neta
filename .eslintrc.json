@@ -1,11 +1,22 @@
 {
-  "extends": "google",
-  "ecmaFeatures": {
-    "modules": true
+  "extends": "airbnb",
+  "rules": {
+    "require-jsdoc": 2,
+    "consistent-return": 2,
+    "no-undefined": 2,
+    "max-len": [2, 80, 2],
+    "indent": [2, 2],
+    "valid-jsdoc": [2, {
+      "requireReturn": false,
+      "prefer": {
+        "returns": "return",
+        "arg": "param",
+        "argument": "param"
+      }
+    }]
   },
   "env": {
     "node": true,
-    "browser": true,
-    "es6": true
+    "browser": true
   }
 }
