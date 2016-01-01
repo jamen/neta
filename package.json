@@ -16,27 +16,26 @@
     "client",
     "customizable"
   ],
-  "author": "Jamen Marz",
+  "author": "Jamen Marzonie",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/jamen/neta/issues"
   },
   "homepage": "https://github.com/jamen/neta#readme",
   "dependencies": {
-    "babel-core": "^6.3.17",
-    "babel-preset-es2015": "^6.3.13",
-    "babel-preset-react": "^6.3.13",
-    "babel-register": "^6.3.13",
     "jquery": "^2.1.4",
-    "minimist": "^1.2.0",
-    "stylus": "^0.53.0",
-    "olli": "jamen/neta-olli"
+    "react": "^0.14.5",
+    "react-dom": "^0.14.5"
   },
   "devDependencies": {
-    "electron-packager": "^5.1.1",
-    "electron-prebuilt": "latest",
+    "babel-cli": "^6.3.17",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
     "eslint": "^1.10.3",
     "eslint-config-airbnb": "^2.1.1",
-    "eslint-plugin-react": "^3.11.3"
+    "eslint-plugin-react": "^3.13.1",
+    "jade": "^1.11.0",
+    "minimist": "^1.2.0",
+    "stylus": "^0.53.0"
   }
 }
