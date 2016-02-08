@@ -2,7 +2,7 @@
   "name": "neta",
   "version": "0.0.0",
   "description": "A modern, decentralized, and customizable chatting client.",
-  "main": "index.js",
+  "main": "out",
   "scripts": {
     "start": "electron . --dev",
     "build": "rm -rf out; babel src -d out",
