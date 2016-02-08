@@ -4,8 +4,8 @@
   "description": "A modern, decentralized, and customizable chatting client.",
   "main": "out",
   "scripts": {
-    "start": "electron . --dev",
-    "build": "rm -rf out; babel src -d out",
+    "start": "make; electron . --dev",
+    "build": "make",
     "lint": "eslint ."
   },
   "repository": {
@@ -37,6 +37,7 @@
     "eslint-config-airbnb": "^2.1.1",
     "eslint-plugin-react": "^3.13.1",
     "minimist": "^1.2.0",
+    "pug-cli": "0.0.0",
     "stylus": "^0.53.0"
   }
 }
