@@ -11,7 +11,7 @@ app.on('ready', () => {
     height: size.height - 100,
     autoHideMenuBar: true,
   });
-  main.loadURL('file://' + join(__dirname, 'view', 'index.html'));
+  main.loadURL('file://' + join(__dirname, 'views', 'index.html'));
 
   if (opts.dev) {
     main.openDevTools();
