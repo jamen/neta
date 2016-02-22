@@ -6,14 +6,17 @@ const opts = minimist(process.argv.slice(2));
 
 app.on('ready', () => {
   const size = screen.getPrimaryDisplay().workAreaSize;
-  const main = new BrowserWindow({
+  const win = new BrowserWindow({
     width: size.width - 100,
     height: size.height - 100,
     autoHideMenuBar: true,
+    show: false,
   });
-  main.loadURL('file://' + join(__dirname, 'views', 'index.html'));
+  const wc = win.webContents;
+  win.loadURL('file://' + join(__dirname, 'views', 'index.html'));
+  wc.on('dom-ready', () => win.show());
 
   if (opts.dev) {
-    main.openDevTools();
+    win.openDevTools();
   }
 });
