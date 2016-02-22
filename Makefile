@@ -13,8 +13,8 @@ javascript:
 
 pug:
 	mkdir out/view
-	$(pug) src/views -o out/view
+	$(pug) src/views -o out/views
 
 stylus:
 	mkdir out/style
-	$(stylus) src/styles -o out/style
+	$(stylus) src/styles -o out/styles
