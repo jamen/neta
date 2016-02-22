@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
 import Header from './header';
-import Sidebar from './sidebar';
-import Chat from './chat';
+import Body from './body';
 
 class App extends Component {
   render() {
     return (
       <div className="app">
         <Header />
-        <Sidebar />
-        <Chat />
+        <Body />
       </div>
     );
   }
