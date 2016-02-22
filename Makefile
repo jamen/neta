@@ -12,9 +12,9 @@ javascript:
 	$(babel) src -d out
 
 pug:
-	mkdir out/view
+	mkdir out/views
 	$(pug) src/views -o out/views
 
 stylus:
-	mkdir out/style
+	mkdir out/styles
 	$(stylus) src/styles -o out/styles
