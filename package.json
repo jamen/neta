@@ -8,6 +8,7 @@
     "build": "make",
     "lint": "eslint ."
   },
+  "private": true,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jamen/neta.git"
@@ -29,15 +30,16 @@
     "react-dom": "^0.14.5"
   },
   "devDependencies": {
-    "babel-cli": "^6.3.17",
     "babel-preset-es2015": "^6.3.13",
     "babel-preset-react": "^6.3.13",
-    "electron-prebuilt": "^0.36.7",
+    "electron-prebuilt": "^0.36.8",
     "eslint": "^1.10.3",
     "eslint-config-airbnb": "^2.1.1",
     "eslint-plugin-react": "^3.13.1",
-    "minimist": "^1.2.0",
-    "pug-cli": "0.0.0",
-    "stylus": "^0.53.0"
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-pug": "^0.2.2",
+    "gulp-stylus": "^2.3.0",
+    "minimist": "^1.2.0"
   }
 }
