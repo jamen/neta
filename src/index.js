@@ -1,8 +1,14 @@
 import { BrowserWindow, app, screen } from 'electron';
 import { join } from 'path';
 import minimist from 'minimist';
+import pack from '../package';
 
 const opts = minimist(process.argv.slice(2));
+
+if (opts.version) {
+  console.log(pack.version);
+  process.exit(0);
+}
 
 app.on('ready', () => {
   const size = screen.getPrimaryDisplay().workAreaSize;
