@@ -4,7 +4,7 @@ class Settings extends Component {
   render() {
     return (
       <div className="page settings">
-        {this.props.params.what}
+        The {this.props.params.page} settings page
       </div>
     );
   }
