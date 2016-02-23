@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/jamen/neta#readme",
   "dependencies": {
-    "jquery": "^2.1.4",
+    "neta-client": "0.0.1",
     "react": "^0.14.5",
     "react-dom": "^0.14.5"
   },
