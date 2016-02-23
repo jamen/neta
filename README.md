@@ -21,7 +21,7 @@ gulp build package
 $ neta
 ```
 
-For developers, you can use the `npm start` script, so you don't have to rebuild constant:
+Developers can use `npm start`, so you can skip the building process:
 ```
 $ npm start
 ```
