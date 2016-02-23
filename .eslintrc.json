@@ -2,6 +2,7 @@
   "extends": "airbnb",
   "rules": {
     "no-console": 0,
+    "react/prop-types": 0,
     "require-jsdoc": 2,
     "consistent-return": 2,
     "no-undefined": 2,
