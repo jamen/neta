@@ -9,7 +9,7 @@ gulp.task('default', ['package']);
 
 // Transpiling ES6 to ES5 with Babel:
 gulp.task('build:javascript', ['clean:javascript'], () => {
-  return gulp.src(['src/scripts/**.js', 'src/index.js'], { base: 'src' })
+  return gulp.src(['src/scripts/**', 'src/index.js'], { base: 'src' })
     .pipe(babel())
     .pipe(gulp.dest('out'));
 });
