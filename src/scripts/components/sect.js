@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import classes from 'classnames';
 
-class BarSect extends Component {
+class Sect extends Component {
   constructor(props) {
     super(props);
 
@@ -18,7 +18,7 @@ class BarSect extends Component {
 
   render() {
     return (
-      <div className="bar-sect">
+      <div className="sect">
         <span className="title" onClick={this.toggleState}>
           {this.props.title}
         </span>
@@ -30,4 +30,4 @@ class BarSect extends Component {
   }
 }
 
-export default BarSect;
+export default Sect;
