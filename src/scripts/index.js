@@ -1,8 +1,18 @@
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
 import React from 'react';
-import { App } from './components';
+import { App, Chat, Settings, Home } from './components';
+import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 
-document.addEventListener('DOMContentLoaded', function domLoad() {
+window.onload = function load() {
   const main = document.getElementById('main');
-  ReactDOM.render(<App />, main);
-});
+  render((
+    <Router history={hashHistory}>
+      <Route path="/" component={App}>
+        <IndexRoute component={Home} />
+        <Route path="chat" component={Chat} />
+        <Route path="settings/:page" component={Settings} />
+      </Route>
+    </Router>),
+    main
+  );
+};

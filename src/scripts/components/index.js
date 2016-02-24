@@ -1,8 +1,8 @@
 import App from './app';
-import Header from './header';
-import Body from './body';
-export { App, Header, Body };
-
+import Bar from './bar';
+import BarSect from './bar-sect';
+import BarButton from './bar-button';
 import Chat from './chat';
-import Sidebar from './sidebar';
-export { Chat, Sidebar };
+import Home from './home';
+import Settings from './settings';
+export { App, Bar, BarSect, BarButton, Chat, Home, Settings };

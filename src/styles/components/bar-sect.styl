@@ -1,0 +1,21 @@
+.bar-sect
+  width 100%
+
+  .title
+    color #000
+    font-weight bold
+    opacity 0.6
+    font-size .9em
+    display block
+    width 100%
+    background-color darken($blue, 15%);
+    padding 5px
+    box-shadow inset 0px 7px 5px -5px rgba(0, 0, 0, 0.2),
+               inset 0px -7px 5px -5px rgba(0, 0, 0, 0.2)
+
+  .items
+    display flex
+    flex-direction column
+
+    &.disabled
+      display none
