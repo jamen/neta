@@ -1,14 +1,19 @@
 import React, { Component } from 'react';
-import { BarSect, BarButton } from '.';
+import { Sect, Button } from '.';
 
 class Bar extends Component {
   render() {
     return (
       <div className="bar">
-        <BarSect title="Settings">
-          <BarButton name="Account" />
-          <BarButton name="Chat" />
-        </BarSect>
+        <Sect title="Settings">
+          <Button name="Account" to="/settings/account" />
+          <Button name="Chat" to="/settings/chat" />
+        </Sect>
+
+        <Sect title="Chats">
+          <Button name="Foo" to="/chat/foo" />
+          <Button name="Bar" to="/chat/bar" />
+        </Sect>
       </div>
     );
   }

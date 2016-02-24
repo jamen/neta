@@ -9,7 +9,7 @@ window.onload = function load() {
     <Router history={hashHistory}>
       <Route path="/" component={App}>
         <IndexRoute component={Home} />
-        <Route path="chat" component={Chat} />
+        <Route path="chat/:chat" component={Chat} />
         <Route path="settings/:page" component={Settings} />
       </Route>
     </Router>),

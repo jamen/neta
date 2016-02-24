@@ -4,7 +4,7 @@ class Chat extends Component {
   render() {
     return (
       <div className="page chat">
-        Chat
+        Chat {this.props.params.chat}
       </div>
     );
   }
