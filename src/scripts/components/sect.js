@@ -21,6 +21,7 @@ class Sect extends Component {
       <div className="sect">
         <span className="title" onClick={this.toggleState}>
           {this.props.title}
+          <i className={classes('fa', this.state.active ? 'fa-caret-up' : 'fa-caret-down')}></i>
         </span>
         <div className={classes('items', !this.state.active && 'disabled')}>
           {this.props.children}
