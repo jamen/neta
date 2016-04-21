@@ -9,21 +9,22 @@ class Sect extends Component {
       active: typeof props.active !== 'undefined' ? props.active : true,
     };
 
-    this.toggleState = this.toggleState.bind(this);
+    this.toggle = this.toggle.bind(this);
   }
 
-  toggleState() {
-    this.setState({ active: this.state.active ? false : true });
+  toggle() {
+    this.setState({ active: !this.state.active });
   }
 
   render() {
+    const active = this.state.active;
     return (
       <div className="sect">
-        <span className="title" onClick={this.toggleState}>
+        <span className="title" onClick={this.toggle}>
           {this.props.title}
-          <i className={classes('fa', this.state.active ? 'fa-caret-up' : 'fa-caret-down')}></i>
+        <i className={classes('fa', `fa-caret-${active ? 'up' : 'down'}`)}></i>
         </span>
-        <div className={classes('items', !this.state.active && 'disabled')}>
+        <div className={classes('items', !active && 'disabled')}>
           {this.props.children}
         </div>
       </div>
