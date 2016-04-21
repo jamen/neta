@@ -8,7 +8,7 @@ Neta is a modern, decentralized, and customizable chatting client.  It uses a de
 You cannot currently install `neta` from npm, dep files, etc...  You wont be able to [until v1][v1-issues].  Until then, clone this repository and see "Usage" as well as "Building & Packaging" below.
 
 ## Building & Packaging
-You can build the source with (outputs to `out`):
+Building the source files (outputs to `out`):
 ```shell
 $ npm run build
 ```
@@ -17,6 +17,7 @@ Building the source and packaging (outputs to `dist`):
 ```shell
 $ npm run package
 ```
+
 When packaging from `gulp`, you can use specific systems:
  - `package-win32`: Windows
  - `package-linux`: linux
@@ -51,7 +52,6 @@ $ npm run watch
 <!-- All http links must be "tagged" -->
  [@jamen]: https://github.com/jamen
  [jamen-image]: https://avatars2.githubusercontent.com/u/6251703?v=3&s=125
-
  [wiki]: https://github.com/jamen/neta/wiki
  [issues]: https://github.com/jamen/neta/issues
  [v1-issues]: https://github.com/jamen/neta/milestones/v1
