@@ -2,6 +2,8 @@ Neta
 ====
 > A modern, decentralized, and customizable chatting client.
 
+**Note:** This is in early development, expect lots of changes and potientally unstable code.
+
 Neta is a modern, decentralized, and customizable chatting client.  It uses a developer-friendly ecosystem to enable use of plugin and theme APIs, so users can build a more personal chatting client, but not at the expense of security, usability, or price.
 
 ## Installation
